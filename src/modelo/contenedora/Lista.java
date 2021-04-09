@@ -20,32 +20,6 @@ public class Lista<T>
         this.primero = primero;
     }
 
-    /*
-    Retorna los objetos de la lista
-     */
-    public Lista<T> darObjetos()
-    {
-        Lista<T> objetos = new Lista<>();
-
-        Nodo<T> actual = primero;
-
-        if(primero == null)
-        {
-            objetos = null;
-        }
-        else
-            {
-                 while (actual != null)
-                 {
-                      objetos.adicionarAlFinal(actual);
-                      actual = actual.darSiguiente();
-            }
-        }
-
-
-        return objetos;
-
-    }
 
     public String darDataObjetos()
     {
@@ -98,7 +72,7 @@ public class Lista<T>
      */
     public int contarElementos()
     {
-        Nodo<T> actual;
+        Nodo actual;
         actual = primero;
         int contar = 0;
 
@@ -116,6 +90,21 @@ public class Lista<T>
     public void eliminarTodo()
     {
         primero = null;
+    }
+
+    /*
+    Retorna true si la lista esta vacia, false de lo contrario
+     */
+    public boolean estaVacio()
+    {
+        boolean comprobar = false;
+
+        if ( primero == null)
+        {
+            comprobar = true;
+        }
+
+        return comprobar;
     }
 }
 
