@@ -38,8 +38,8 @@ public class UsuarioDao extends Dao<UsuarioDto> {
         {
             throwables.printStackTrace();
         }
-      //  return new ArrayList<>(usuariosList);
-        return null;
+        return usuariosList;
+
     }
 
     @Override
