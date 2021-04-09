@@ -63,6 +63,7 @@ public class Lista<T>
             {
                 cadena += actual.toString();
                 actual = actual.darSiguiente();
+
             }
         }
 
