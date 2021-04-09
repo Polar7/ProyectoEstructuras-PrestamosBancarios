@@ -104,6 +104,7 @@ public class Lista<T>
         while(actual != null)
         {
             contar++;
+            actual = actual.darSiguiente();
         }
         return contar;
     }

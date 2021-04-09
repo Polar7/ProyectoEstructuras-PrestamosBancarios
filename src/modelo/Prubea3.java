@@ -12,11 +12,10 @@ class Prueba3
 
         Nodo pruebaNodo = new Nodo("Hola");
         listaParaRetornar.adicionarAlFinal(pruebaNodo);
-     //   contacts.adicionarAlFinal(new Nodo(5));
-     //  System.out.println(listaParaRetornar.contarElementos());
-        System.out.println(listaParaRetornar.darObjetos());
 
-                pajarito en la casa
+     //   contacts.adicionarAlFinal(new Nodo(5));
+        System.out.println(listaParaRetornar.contarElementos());
+        System.out.println(listaParaRetornar.darObjetos());
     }
 
     public static void main(String[] args)
