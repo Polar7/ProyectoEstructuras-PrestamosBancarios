@@ -26,7 +26,7 @@ public abstract class Dao<T extends Dto>
         return dataSource.runUpdateQuery(data.insert());
     }
 
-    public abstract Lista<UsuarioDto> read();
+    public abstract Lista<T> read();
 
     public boolean update(Dto data)
     {

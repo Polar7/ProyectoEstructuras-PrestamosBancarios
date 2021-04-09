@@ -15,7 +15,7 @@ public class PruebaListaEnlazada
         listaParaRetornar.adicionarAlFinal(pruebaNodo);
         listaParaRetornar.adicionarAlFinal(new Nodo(5));
 
-       // System.out.println(listaParaRetornar.darDataObjetos());
+        System.out.println(listaParaRetornar.darDataObjetos());
 
    //     listaParaRetornar.cambiarPrimero(new Nodo(5));
         System.out.println(listaParaRetornar);
@@ -23,7 +23,7 @@ public class PruebaListaEnlazada
       //  listaParaRetornar.adicionarAlFinal(new Nodo(5));
       //  listaParaRetornar.adicionarAlFinal(new Nodo(5));
      //   listaParaRetornar.adicionarAlFinal(new Nodo(5));
-      //  System.out.println(listaParaRetornar.contarElementos());
+        System.out.println(listaParaRetornar.contarElementos());
        // System.out.println(listaParaRetornar.darDataObjetos());
 
     }

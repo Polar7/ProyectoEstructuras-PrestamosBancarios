@@ -1,6 +1,10 @@
 package modelo.contenedora;
 
-public class Lista<T>
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
+public class Lista<T> implements Iterable<T>
 {
 
     private Nodo<T> primero;
@@ -48,13 +52,15 @@ public class Lista<T>
     /*
     Adiciona un objeto al final de la lista
      */
-    public void adicionarAlFinal(Nodo<T> objeto)
+    public void adicionarAlFinal(T objeto)
     {
         Nodo<T> actual;
 
+        Nodo<T> nodoIngresar = new Nodo<>(objeto);
+
         if(primero== null)
         {
-            primero =  objeto;
+            primero =  nodoIngresar;
         }
         else
             {
@@ -62,7 +68,7 @@ public class Lista<T>
             while(actual.darSiguiente() != null){
                 actual = actual.darSiguiente();
             }
-            actual.cambiarSiguiente(objeto);
+            actual.cambiarSiguiente(nodoIngresar);
 
         }
     }
@@ -105,6 +111,25 @@ public class Lista<T>
         }
 
         return comprobar;
+    }
+
+
+    @Override
+    public Iterator<T> iterator()
+    {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super T> action)
+    {
+
+    }
+
+    @Override
+    public Spliterator<T> spliterator()
+    {
+        return null;
     }
 }
 
