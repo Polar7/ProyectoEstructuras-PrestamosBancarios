@@ -15,7 +15,8 @@ class Prueba3
      //   contacts.adicionarAlFinal(new Nodo(5));
      //  System.out.println(listaParaRetornar.contarElementos());
         System.out.println(listaParaRetornar.darObjetos());
-        pepito peres
+
+                pajarito en la casa
     }
 
     public static void main(String[] args)
