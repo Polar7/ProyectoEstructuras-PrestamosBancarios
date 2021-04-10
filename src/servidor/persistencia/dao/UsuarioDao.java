@@ -64,7 +64,7 @@ public class UsuarioDao extends Dao<UsuarioDto> {
                 resultSet.getString("nombre"),                //resultSet.getString(2)
                 resultSet.getString("apellido"),            //resultSet.getString(3)
                 resultSet.getInt("telefono"),     //resultSet.getString(4)
-                resultSet.getDate("fechanacimiento"),               //resultSet.getString(5)
+                resultSet.getDate("fecha_nacimiento"),               //resultSet.getString(5)
                 resultSet.getString("direccion"),
                 resultSet.getInt("score"));              //resultSet.getString(6)
     }

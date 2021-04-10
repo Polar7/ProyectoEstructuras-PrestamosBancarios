@@ -42,23 +42,30 @@ public class UsuarioDto implements Dto, Serializable {
     @Override
     public String insert() {
 
-        String sql = "INSERT INTO public.usuarios(cedula, nombre, apellido, telefono, fechanacimiento, direccion, score) VALUES ("
+        String sql = "INSERT INTO public.usuarios(cedula, nombre, apellido, telefono, fecha_nacimiento, direccion, score) VALUES ("
                 + cedula +", '"
                 + nombre.trim() + "','"
                 + apellido.trim() + "','"
                 + telefono + "','"
                 + fechaNacimiento + "','"
                 + direccion.trim() + "','"
-                + score + "','"
+                + score
                 + "');";
         System.out.println(sql);
         return sql;
     }
 
     @Override
-    public String update() {
-        // TODO Auto-generated method stub
-        return null;
+    public String update()
+    {
+        String sql = " UPDATE public.usuarios SET nombre= '" + nombre.trim() +
+            "', apellido = '" +  apellido.trim() +
+            "', telefono = " + telefono +
+            "', fecha_nacimiento = '" + fechaNacimiento +
+            "', direccion = '" + direccion +
+            "', score = " + score +
+            "WHERE cedula = " + cedula;
+        return sql;
     }
 
     @Override
