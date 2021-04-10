@@ -1,7 +1,9 @@
 package modelo.contenedora;
 
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Spliterator;
+import java.util.Spliterators;
 import java.util.function.Consumer;
 
 public class Lista<T> implements Iterable<T>
@@ -120,17 +122,56 @@ public class Lista<T> implements Iterable<T>
         return null;
     }
 
+    /*
+    public Iterator<Integer> iterator() {
+
+        int size= this.size;
+
+        Iterator<Integer> i= new Iterator<Integer>() {
+
+            @Override
+            public boolean hasNext() {
+
+                if (posicion<size) {
+
+                    return true;
+                }else {
+                    return false;
+                }
+
+            }
+
+            @Override
+            public Integer next() {
+
+
+                return numero*posicion++;
+            }
+
+
+
+        };
+        return i;
+    }
+
+
+     */
     @Override
     public void forEach(Consumer<? super T> action)
     {
-
+        Objects.requireNonNull(action);
+        for (T t : this) {
+            action.accept(t);
+        }
     }
 
     @Override
     public Spliterator<T> spliterator()
     {
-        return null;
+        return Spliterators.spliteratorUnknownSize(iterator(), 0);
     }
+
+
 }
 
 

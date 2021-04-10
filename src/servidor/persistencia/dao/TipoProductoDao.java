@@ -22,18 +22,18 @@ public class TipoProductoDao extends Dao<TipoProductoDto>{
         DataSource         dataSource = DataSource.getInstance();
         TipoProductoDto data       = new TipoProductoDto();
         ResultSet resultSet  = dataSource.runQuery(data.read());
-        Lista<TipoProductoDto> tipoproductoList = new Lista<>();
+        Lista<TipoProductoDto> tipoProductoList = new Lista<>();
         try
         {
             while (resultSet.next())
             {
-                tipoproductoList.adicionarAlFinal(getData(resultSet));
+                tipoProductoList.adicionarAlFinal(getData(resultSet));
             }
         } catch (SQLException throwables)
         {
             throwables.printStackTrace();
         }
-        return tipoproductoList;
+        return tipoProductoList;
 
     }
 
