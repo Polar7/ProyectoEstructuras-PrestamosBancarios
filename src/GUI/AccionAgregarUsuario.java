@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AccionAgregarUsuario {
-    private JPanel MenuAgregarUsuario;
+    public JPanel MenuAgregarUsuario;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -17,6 +17,18 @@ public class AccionAgregarUsuario {
     private JTextField textField7;
 
 
-
-
+    public AccionAgregarUsuario() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openUsuario();
+            }
+        });
+    }
+    void openUsuario(){
+        JFrame frame = new JFrame("Agregar Usuario");
+        frame.setContentPane(new MenuPrincipal().MenuPrincipal);
+        frame.pack();
+        frame.setVisible(true);
+    }
 }
