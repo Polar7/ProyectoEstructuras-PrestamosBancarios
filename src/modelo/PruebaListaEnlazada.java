@@ -28,10 +28,10 @@ public class PruebaListaEnlazada
 
     }
 
-    public static void main(String[] args)
-    {
-        new PruebaListaEnlazada();
-    }
+   // public static void main(String[] args)
+   // {
+   //     new PruebaListaEnlazada();
+  //  }
 
 
 }
