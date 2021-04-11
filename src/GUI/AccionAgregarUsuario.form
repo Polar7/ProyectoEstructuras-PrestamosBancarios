@@ -75,16 +75,18 @@
           <text value="Fecha de nacimiento"/>
         </properties>
       </component>
-      <component id="8b26" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="8b26" class="javax.swing.JTextField" binding="txtcedula">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
-      <component id="cac5a" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="cac5a" class="javax.swing.JTextField" binding="txtnombre">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -93,7 +95,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="db87e" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="db87e" class="javax.swing.JTextField" binding="txtapellido">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -102,7 +104,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="6be7b" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="6be7b" class="javax.swing.JTextField" binding="txttelefono">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -111,7 +113,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="313d9" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+      <component id="313d9" class="javax.swing.JTextField" binding="txtfecha">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -129,7 +131,7 @@
           <text value="Direccion"/>
         </properties>
       </component>
-      <component id="5aeeb" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+      <component id="5aeeb" class="javax.swing.JTextField" binding="txtdireccion">
         <constraints>
           <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -138,7 +140,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="e8218" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+      <component id="e8218" class="javax.swing.JButton" binding="btncancelar">
         <constraints>
           <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -156,7 +158,7 @@
           <text value="Score"/>
         </properties>
       </component>
-      <component id="b5144" class="javax.swing.JButton" binding="agregarButton" default-binding="true">
+      <component id="b5144" class="javax.swing.JButton" binding="btnagregar">
         <constraints>
           <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -165,7 +167,7 @@
           <text value="Agregar"/>
         </properties>
       </component>
-      <component id="8fc97" class="javax.swing.JTextField" binding="textField7" default-binding="true">
+      <component id="8fc97" class="javax.swing.JTextField" binding="txtscore">
         <constraints>
           <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>

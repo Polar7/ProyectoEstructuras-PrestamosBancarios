@@ -24,7 +24,7 @@
           <text value="Identificador"/>
         </properties>
       </component>
-      <component id="d7e13" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="d7e13" class="javax.swing.JTextField" binding="txtidProductoAEliminar">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -35,7 +35,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="ab55c" class="javax.swing.JButton" binding="eliminarButton" default-binding="true">
+      <component id="ab55c" class="javax.swing.JButton" binding="btneliminar">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -44,7 +44,7 @@
           <text value="Eliminar"/>
         </properties>
       </component>
-      <component id="60b26" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+      <component id="60b26" class="javax.swing.JButton" binding="btncancelar">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>

@@ -26,7 +26,7 @@
           <text value="Identificador"/>
         </properties>
       </component>
-      <component id="a4e49" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="a4e49" class="javax.swing.JTextField" binding="txtIdentificador">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -44,7 +44,7 @@
           <text value="Nombre"/>
         </properties>
       </component>
-      <component id="1c6dd" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="1c6dd" class="javax.swing.JTextField" binding="txtNombre">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -53,7 +53,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="26076" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+      <component id="26076" class="javax.swing.JButton" binding="btncancelar">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -62,7 +62,7 @@
           <text value="Cancelar"/>
         </properties>
       </component>
-      <component id="632b1" class="javax.swing.JButton" binding="agregarButton" default-binding="true">
+      <component id="632b1" class="javax.swing.JButton" binding="btnagregar">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>

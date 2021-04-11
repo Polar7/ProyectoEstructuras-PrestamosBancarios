@@ -6,34 +6,34 @@ import java.awt.event.ActionListener;
 
 public class MenuPrincipal {
     public JPanel MenuPrincipal;
-    private JButton agregarUsuarioButton;
-    private JButton eliminarUsuarioButton;
-    private JButton agregarTipoDeProductoButton;
-    private JButton eliminarTipoDeProductoButton;
+    private JButton btnagregarUsuario;
+    private JButton btneliminarUsuario;
+    private JButton btnagregarTipoDeProducto;
+    private JButton btneliminarTipoDeProducto;
 
     public MenuPrincipal() {
-        agregarUsuarioButton.addActionListener(new ActionListener() {
+        btnagregarUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 openAgregarUsuario();
             }
         });
-        eliminarUsuarioButton.addActionListener(new ActionListener() {
+        btneliminarUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 openEliminarUsuario();
             }
         });
-        agregarTipoDeProductoButton.addActionListener(new ActionListener() {
+        btnagregarTipoDeProducto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 openAgregarTipoProducto();
             }
         });
-        eliminarTipoDeProductoButton.addActionListener(new ActionListener() {
+        btneliminarTipoDeProducto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 

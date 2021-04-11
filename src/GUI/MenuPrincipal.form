@@ -15,7 +15,7 @@
     </properties>
     <border type="etched" title="Acciones"/>
     <children>
-      <component id="2f41c" class="javax.swing.JButton" binding="agregarUsuarioButton" default-binding="true">
+      <component id="2f41c" class="javax.swing.JButton" binding="btnagregarUsuario">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
@@ -24,7 +24,7 @@
           <text value="Agregar Usuario"/>
         </properties>
       </component>
-      <component id="d60d0" class="javax.swing.JButton" binding="eliminarUsuarioButton" default-binding="true">
+      <component id="d60d0" class="javax.swing.JButton" binding="btneliminarUsuario">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
@@ -33,7 +33,7 @@
           <text value="Eliminar Usuario"/>
         </properties>
       </component>
-      <component id="6f598" class="javax.swing.JButton" binding="agregarTipoDeProductoButton" default-binding="true">
+      <component id="6f598" class="javax.swing.JButton" binding="btnagregarTipoDeProducto">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
@@ -42,7 +42,7 @@
           <text value="Agregar Tipo De Producto"/>
         </properties>
       </component>
-      <component id="93efb" class="javax.swing.JButton" binding="eliminarTipoDeProductoButton" default-binding="true">
+      <component id="93efb" class="javax.swing.JButton" binding="btneliminarTipoDeProducto">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>

@@ -6,19 +6,19 @@ import java.awt.event.ActionListener;
 
 public class AccionAgregarUsuario {
     public JPanel MenuAgregarUsuario;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JButton cancelarButton;
-    private JButton agregarButton;
-    private JTextField textField6;
-    private JTextField textField7;
+    private JTextField txtcedula;
+    private JTextField txtnombre;
+    private JTextField txtapellido;
+    private JTextField txttelefono;
+    private JTextField txtfecha;
+    private JButton btncancelar;
+    private JButton btnagregar;
+    private JTextField txtdireccion;
+    private JTextField txtscore;
 
 
     public AccionAgregarUsuario() {
-        cancelarButton.addActionListener(new ActionListener() {
+        btncancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openUsuario();
