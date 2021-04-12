@@ -1,7 +1,7 @@
 package servidor.persistencia.dao;
 
 
-import modelo.contenedora.Lista;
+import servidor.modelo.contenedora.Lista;
 import servidor.persistencia.DataSource;
 import servidor.persistencia.dto.Dto;
 import servidor.persistencia.dto.ProductosDto;
@@ -15,7 +15,7 @@ public class ProductosDao extends Dao<ProductosDto> {
     {
         super(DataSource.getInstance());
     }
-
+/*
     @Override
     public Lista<ProductosDto> read()
     {
@@ -63,4 +63,6 @@ public class ProductosDao extends Dao<ProductosDto> {
                 resultSet.getInt("plazo_meses"),
                 resultSet.getInt("tipos_productos"));              //resultSet.getString(6)
     }
+    */
+
 }

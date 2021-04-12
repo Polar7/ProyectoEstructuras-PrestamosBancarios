@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class BancosDto implements Dto, Serializable {
 
 
+    private static final long       serialVersionUID = 568794L;
     private String nombre;
     private int nit;
     private String direccion;

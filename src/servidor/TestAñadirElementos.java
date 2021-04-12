@@ -1,10 +1,9 @@
 package servidor;
 
 
-import modelo.contenedora.Nodo;
 import servidor.persistencia.dao.TipoProductoDao;
 import servidor.persistencia.dto.TipoProductoDto;
-import modelo.contenedora.Lista;
+import servidor.modelo.contenedora.Lista;
 
 
 public class TestAñadirElementos {
@@ -31,7 +30,7 @@ public class TestAñadirElementos {
 
         TipoProductoDao tipooProductoDao = new TipoProductoDao();
 
-        Lista<TipoProductoDto> tipoProductosList = tipooProductoDao.read();
+        Lista<TipoProductoDto> tipoProductosList = tipooProductoDao.read(new TipoProductoDto());
 
         System.out.println(tipoProductosList.darDataObjetos());
 

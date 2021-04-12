@@ -1,10 +1,9 @@
 package servidor.persistencia.dao;
 
-import modelo.contenedora.Lista;
+import servidor.modelo.contenedora.Lista;
 import servidor.persistencia.DataSource;
 import servidor.persistencia.dto.Dto;
 import servidor.persistencia.dto.TipoProductoDto;
-import servidor.persistencia.dto.UsuarioDto;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +14,7 @@ public class TipoProductoDao extends Dao<TipoProductoDto>{
     {
         super(DataSource.getInstance());
     }
-
+/*
     @Override
     public Lista<TipoProductoDto> read()
     {
@@ -58,5 +57,6 @@ public class TipoProductoDao extends Dao<TipoProductoDto>{
         return new TipoProductoDto(resultSet.getInt("id"),   // resultSet.getLong(1)
                 resultSet.getString("nombre"));              //resultSet.getString(6)
     }
+    */
 }
 

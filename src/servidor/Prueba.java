@@ -1,11 +1,8 @@
 package servidor;
 
-import modelo.PruebaListaEnlazada;
-import modelo.contenedora.Lista;
-import modelo.contenedora.Nodo;
-import servidor.persistencia.dto.UsuarioDto;
 
-import java.util.Iterator;
+import servidor.modelo.contenedora.Lista;
+import servidor.persistencia.dto.UsuarioDto;
 
 public class Prueba
 {

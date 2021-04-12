@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class TipoProductoDto implements Dto, Serializable
 {
 
+    private static final long       serialVersionUID = 654965498L;
     private int id;
     private String nombre;
 
@@ -72,5 +73,13 @@ public class TipoProductoDto implements Dto, Serializable
     @Override
     public String findById() {
         return "SELECT * FROM person WHERE id = " + id;
+    }
+
+    @Override
+    public String toString() {
+        return "TipoProductoDto{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }

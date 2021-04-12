@@ -1,15 +1,12 @@
 package servidor.persistencia.dao;
 
-import modelo.contenedora.Lista;
+import servidor.modelo.contenedora.Lista;
 import servidor.persistencia.DataSource;
 import servidor.persistencia.dto.Dto;
 import servidor.persistencia.dto.UsuarioDto;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
 
 /**
  * @author Saul Osbaldo Aponte Lopez
@@ -20,7 +17,7 @@ public class UsuarioDao extends Dao<UsuarioDto> {
     {
         super(DataSource.getInstance());
     }
-
+/*
     @Override
     public Lista<UsuarioDto> read()
     {
@@ -68,4 +65,6 @@ public class UsuarioDao extends Dao<UsuarioDto> {
                 resultSet.getString("direccion"),
                 resultSet.getInt("score"));              //resultSet.getString(6)
     }
+    */
+
 }

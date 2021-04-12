@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class ProductosDto implements Dto, Serializable {
 
+    private static final long       serialVersionUID = 654988L;
     private int numero_Referencia;
     private int cupos_disponibles;
     private int tasaMV;

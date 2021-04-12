@@ -1,6 +1,6 @@
 package servidor.persistencia.dao;
 
-import modelo.contenedora.Lista;
+import servidor.modelo.contenedora.Lista;
 import servidor.persistencia.DataSource;
 import servidor.persistencia.dto.BancosDto;
 import servidor.persistencia.dto.Dto;
@@ -9,12 +9,13 @@ import servidor.persistencia.dto.UsuarioDto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class BancosDao extends Dao<BancosDto> {
+public class BancosDao extends Dao<BancosDto>
+{
     public BancosDao()
     {
         super(DataSource.getInstance());
     }
-
+/*
     @Override
     public Lista<BancosDto> read()
     {
@@ -60,5 +61,5 @@ public class BancosDao extends Dao<BancosDto> {
                 resultSet.getInt("cantidad_clientes")    //resultSet.getString(4)
                );              //resultSet.getString(6)
     }
-
+*/
 }
