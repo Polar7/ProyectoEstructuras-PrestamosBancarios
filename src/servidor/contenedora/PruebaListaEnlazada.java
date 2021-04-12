@@ -1,7 +1,7 @@
-package servidor.modelo;
+package servidor.contenedora;
 
-import servidor.modelo.contenedora.Lista;
-import servidor.modelo.contenedora.Nodo;
+import servidor.contenedora.listaSimplementeEnlazada.Lista;
+import servidor.contenedora.listaSimplementeEnlazada.Nodo;
 
 public class PruebaListaEnlazada
 {

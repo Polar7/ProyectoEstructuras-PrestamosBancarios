@@ -1,9 +1,9 @@
 package servidor.socketServer;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import servidor.controlador.Controlador2;
+import servidor.persistencia.dto.Dto;
+
+import java.io.*;
 import java.net.Socket;
 
 public class SingleTCPEchoServer extends Thread{
@@ -11,49 +11,65 @@ public class SingleTCPEchoServer extends Thread{
     //Socket dirigido a un hilo
     public static final int PORT = 1234;
     private Socket socket = null;
-    private BufferedReader in;
-    private PrintWriter out;
+    private ObjectInputStream in;
+    private ObjectOutputStream out;
+
+    private Controlador2 controlador2;
 
     public SingleTCPEchoServer(Socket sock) {
 
         this.socket = sock;
         try
         {
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            out = new PrintWriter(socket.getOutputStream(), true);
+         //   in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+         //   out = new PrintWriter(socket.getOutputStream(), true);
+            OutputStream outputStream = sock.getOutputStream();
+            out = new ObjectOutputStream(outputStream);
+
+            InputStream inputStream = sock.getInputStream();
+            in = new ObjectInputStream(inputStream);
+
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
         }
         start();
+      //  run();
     }
 
     @Override
-    public void run() {
+    public void run()
+    {
 
-        try {
+        try
+        {
+            System.out.println("Estoy recibiendo...");
 
-        int numMsg = 0;
-        String msg = null;
+            Dto objetoRecibido = (Dto) in.readObject();
 
-        do {
-            msg = in.readLine();
-            System.out.println("Message Received." + msg);
-            out.println("Message from server ->" + msg);
-            numMsg++;
-        } while (!msg.equals("BYE"));
+            System.out.println("Objeto recibido: " + objetoRecibido);
 
-            System.out.println(numMsg +"Messages Received. Bye bye");
+           // controlador2.recibirObjeto(objetoRecibido);
 
-        } catch (IOException e)
+          //  out.writeObject(controlador2.devolver());
+
+
+
+
+        } catch (IOException | ClassNotFoundException e)
         {
         e.printStackTrace();
         }
-        finally {
-                try {
+        finally
+        {
+            try
+            {
                 socket.close();
-                }
-            catch (IOException e) {
+            }
+            catch (IOException e)
+            {
                 e.printStackTrace();
             }
         }

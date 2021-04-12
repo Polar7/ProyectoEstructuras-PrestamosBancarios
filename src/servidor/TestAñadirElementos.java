@@ -3,7 +3,7 @@ package servidor;
 
 import servidor.persistencia.dao.TipoProductoDao;
 import servidor.persistencia.dto.TipoProductoDto;
-import servidor.modelo.contenedora.Lista;
+import servidor.contenedora.listaSimplementeEnlazada.Lista;
 
 
 public class TestAñadirElementos {

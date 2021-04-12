@@ -1,12 +1,7 @@
 package servidor.persistencia.dao;
 
-import servidor.modelo.contenedora.Lista;
 import servidor.persistencia.DataSource;
-import servidor.persistencia.dto.Dto;
 import servidor.persistencia.dto.UsuarioDto;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * @author Saul Osbaldo Aponte Lopez

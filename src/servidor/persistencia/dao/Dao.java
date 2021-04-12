@@ -4,7 +4,7 @@ package servidor.persistencia.dao;
 import servidor.persistencia.DataSource;
 import servidor.persistencia.Entity;
 import servidor.persistencia.dto.Dto;
-import servidor.modelo.contenedora.Lista;
+import servidor.contenedora.listaSimplementeEnlazada.Lista;
 
 import java.sql.ResultSet;
 

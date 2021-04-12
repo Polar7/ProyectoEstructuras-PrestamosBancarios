@@ -1,6 +1,6 @@
 package servidor.persistencia;
 
-import servidor.modelo.contenedora.Lista;
+import servidor.contenedora.listaSimplementeEnlazada.Lista;
 import servidor.persistencia.dto.Dto;
 
 import java.lang.reflect.Method;

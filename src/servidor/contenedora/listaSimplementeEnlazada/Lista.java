@@ -1,4 +1,4 @@
-package servidor.modelo.contenedora;
+package servidor.contenedora.listaSimplementeEnlazada;
 
 import java.util.Iterator;
 import java.util.Objects;

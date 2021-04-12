@@ -1,5 +1,7 @@
 package cliente.GUI;
 
+import cliente.sockerCliente.TCPEchoClientObject;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,9 +13,12 @@ public class MenuPrincipal {
     private JButton btnagregarTipoDeProducto;
     private JButton btneliminarTipoDeProducto;
 
+    private TCPEchoClientObject tcpSocket;
+
     public MenuPrincipal()
     {
 
+        //tcpSocket = new TCPEchoClientObject();
 
         btnagregarUsuario.addActionListener(new ActionListener() {
             @Override

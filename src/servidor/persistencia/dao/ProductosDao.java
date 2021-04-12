@@ -1,13 +1,8 @@
 package servidor.persistencia.dao;
 
 
-import servidor.modelo.contenedora.Lista;
 import servidor.persistencia.DataSource;
-import servidor.persistencia.dto.Dto;
 import servidor.persistencia.dto.ProductosDto;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class ProductosDao extends Dao<ProductosDto> {
 

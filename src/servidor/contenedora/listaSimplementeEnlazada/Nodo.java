@@ -1,4 +1,4 @@
-package servidor.modelo.contenedora;
+package servidor.contenedora.listaSimplementeEnlazada;
 
 public class Nodo<T> {
 
