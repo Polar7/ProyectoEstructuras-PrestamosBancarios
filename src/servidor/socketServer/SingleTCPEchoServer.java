@@ -23,12 +23,15 @@ public class SingleTCPEchoServer extends Thread{
         {
          //   in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
          //   out = new PrintWriter(socket.getOutputStream(), true);
+            System.out.println("estoy leyendo");
             OutputStream outputStream = sock.getOutputStream();
             out = new ObjectOutputStream(outputStream);
+
 
             InputStream inputStream = sock.getInputStream();
             in = new ObjectInputStream(inputStream);
 
+            System.out.println("Objeto recibido: " + in);
 
 
 
@@ -48,6 +51,7 @@ public class SingleTCPEchoServer extends Thread{
             System.out.println("Estoy recibiendo...");
 
             Dto objetoRecibido = (Dto) in.readObject();
+
 
             System.out.println("Objeto recibido: " + objetoRecibido);
 

@@ -16,6 +16,7 @@ public class TCPEchoClientObject {
     private ObjectOutputStream out;
     private Controlador1 controlador;
 
+
     public static void main(String[] args) {
         new TCPEchoClientObject();
     }
@@ -23,7 +24,9 @@ public class TCPEchoClientObject {
 
     public TCPEchoClientObject() {
 
+
         controlador = new Controlador1();
+
         System.out.println("Opening host");
 
         try {
@@ -52,7 +55,9 @@ public class TCPEchoClientObject {
             Dto objetoDto = controlador.getObjetoARetornar();
             out.writeObject(objetoDto);
 
-            System.out.println("Objeto enviado" + out);
+            System.out.println(controlador.getObjetoARetornar());
+
+           // System.out.println("Objeto enviado" + out.toString());
 
          //   Object objetoQueRecibeDelServer = in.readObject();
 
