@@ -20,7 +20,6 @@ public class Controlador1
         TipoProductoDto tipoProductoNuevo = new TipoProductoDto(id, nombre);
 
         objetoARetornar = tipoProductoNuevo;
-
         new TCPEchoClientObject();
 
 
