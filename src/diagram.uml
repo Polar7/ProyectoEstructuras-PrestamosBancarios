@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="408.0" y="0.0">servidor.persistencia.DataSource</node>
+    <node x="48.94444444444446" y="250.0">cliente.GUI.MenuPrincipal</node>
+    <node x="78.16666666666669" y="170.0">cliente.GUI.AccionAgregarTipoProducto</node>
+    <node x="-240.0" y="216.0">servidor.socketServer.MultiTCPEchoServer</node>
+    <node x="346.0" y="90.0">servidor.persistencia.dao.TipoProductoDao</node>
+    <node x="0.0" y="0.0">cliente.sockerCliente.TCPEchoClientObject</node>
+    <node x="252.33333333333331" y="485.0">servidor.persistencia.Entity</node>
+    <node x="-216.0" y="56.0">servidor.controlador.Controlador2</node>
+    <node x="256.3333333333333" y="405.0">servidor.contenedora.listaSimplementeEnlazada.Lista</node>
+    <node x="-244.0" y="136.0">servidor.socketServer.SingleTCPEchoServer</node>
+    <node x="156.16666666666669" y="90.0">cliente.controlador.Controlador1</node>
+    <node x="220.0" y="0.0">servidor.persistencia.dto.TipoProductoDto</node>
+    <node x="260.3333333333333" y="325.0">servidor.contenedora.listaSimplementeEnlazada.Nodo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cliente.GUI.MenuPrincipal" target="cliente.GUI.AccionAgregarTipoProducto">
+      <point x="38.0" y="-15.0" />
+      <point x="162.94444444444446" y="225.0" />
+      <point x="202.16666666666669" y="225.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="servidor.contenedora.listaSimplementeEnlazada.Lista" target="servidor.contenedora.listaSimplementeEnlazada.Nodo">
+      <point x="-29.333333333333314" y="-15.0" />
+      <point x="271.0" y="380.0" />
+      <point x="273.66666666666663" y="380.0" />
+      <point x="-26.666666666666686" y="15.0" />
+    </edge>
+    <edge source="cliente.GUI.MenuPrincipal" target="cliente.sockerCliente.TCPEchoClientObject">
+      <point x="-38.0" y="-15.0" />
+      <point x="86.94444444444446" y="225.0" />
+      <point x="38.72222222222223" y="225.0" />
+      <point x="38.72222222222223" y="70.0" />
+      <point x="25.0" y="70.0" />
+      <point x="-75.0" y="15.0" />
+    </edge>
+    <edge source="cliente.sockerCliente.TCPEchoClientObject" target="cliente.controlador.Controlador1">
+      <point x="25.0" y="15.0" />
+      <point x="125.0" y="60.0" />
+      <point x="192.16666666666669" y="60.0" />
+      <point x="-36.0" y="-15.0" />
+    </edge>
+    <edge source="cliente.GUI.AccionAgregarTipoProducto" target="cliente.controlador.Controlador1">
+      <point x="-62.0" y="-15.0" />
+      <point x="140.16666666666669" y="145.0" />
+      <point x="192.16666666666669" y="145.0" />
+      <point x="-36.0" y="15.0" />
+    </edge>
+    <edge source="cliente.controlador.Controlador1" target="cliente.sockerCliente.TCPEchoClientObject">
+      <point x="-60.0" y="-15.0" />
+      <point x="168.16666666666669" y="70.0" />
+      <point x="75.0" y="70.0" />
+      <point x="-25.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.dao.TipoProductoDao" target="servidor.persistencia.DataSource">
+      <point x="42.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="cliente.controlador.Controlador1" target="servidor.persistencia.dto.TipoProductoDto">
+      <point x="12.0" y="-15.0" />
+      <point x="-63.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.Entity" target="servidor.contenedora.listaSimplementeEnlazada.Lista">
+      <point x="-24.0" y="-15.0" />
+      <point x="276.3333333333333" y="460.0" />
+      <point x="278.3333333333333" y="460.0" />
+      <point x="-22.0" y="15.0" />
+    </edge>
+    <edge source="servidor.socketServer.MultiTCPEchoServer" target="servidor.socketServer.SingleTCPEchoServer">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.dao.TipoProductoDao" target="servidor.persistencia.dto.TipoProductoDto">
+      <point x="-42.0" y="-15.0" />
+      <point x="388.0" y="70.0" />
+      <point x="367.0" y="70.0" />
+      <point x="62.99999999999997" y="15.0" />
+    </edge>
+    <edge source="servidor.socketServer.SingleTCPEchoServer" target="servidor.controlador.Controlador2">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="219.0" y="242.0" />
+  <SelectedNodes>
+    <node>servidor.controlador.Controlador2</node>
+    <node>servidor.socketServer.SingleTCPEchoServer</node>
+    <node>servidor.socketServer.MultiTCPEchoServer</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
