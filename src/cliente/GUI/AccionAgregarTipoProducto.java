@@ -27,6 +27,7 @@ public class AccionAgregarTipoProducto
                 controlador.enviarObjetoDTO(Integer.parseInt(txtIdentificador.getText()), txtNombre.getText());
                 System.out.println(Integer.parseInt(txtIdentificador.getText())+ " " + txtNombre.getText() );
                 System.out.println(controlador.getObjetoARetornar());
+
             }
         });
     }
