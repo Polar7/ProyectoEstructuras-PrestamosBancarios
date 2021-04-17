@@ -1,24 +1,31 @@
 package cliente.GUI;
 
+import cliente.controlador.Controlador1;
 import cliente.sockerCliente.TCPEchoClientObject;
+import servidor.controlador.Controlador2;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.Socket;
 
 public class MenuPrincipal {
+    public static Controlador1 controladorinicial;
     public JPanel MenuPrincipal;
     private JButton btnagregarUsuario;
     private JButton btneliminarUsuario;
     private JButton btnagregarTipoDeProducto;
     private JButton btneliminarTipoDeProducto;
 
-    private TCPEchoClientObject tcpSocket;
+    private Controlador2 controladorsecundario;
 
-    public MenuPrincipal()
-    {
+    private Socket tcpSocket;
 
-        //tcpSocket = new TCPEchoClientObject();
+    public MenuPrincipal() throws IOException {
+
+        tcpSocket = new TCPEchoClientObject().iniciar();
+        controladorinicial =  new Controlador1();
 
         btnagregarUsuario.addActionListener(new ActionListener() {
             @Override
@@ -38,7 +45,11 @@ public class MenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                openAgregarTipoProducto();
+                try {
+                    openAgregarTipoProducto();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
         btneliminarTipoDeProducto.addActionListener(new ActionListener() {
@@ -51,12 +62,15 @@ public class MenuPrincipal {
     }
 
 
-    public static void main(String[] args) {
+
+
+    public static void run() throws IOException {
         JFrame frame = new JFrame("MenuPrincipal");
         frame.setContentPane(new MenuPrincipal().MenuPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
     }
 
     void openAgregarUsuario(){
@@ -71,9 +85,9 @@ public class MenuPrincipal {
         frame.pack();
         frame.setVisible(true);
     }
-    void openAgregarTipoProducto(){
+    void openAgregarTipoProducto() throws IOException {
         JFrame frame = new JFrame("Agregar Usuario");
-        frame.setContentPane(new AccionAgregarTipoProducto().AccionAgregarTipoProducto);
+        frame.setContentPane(new AccionAgregarTipoProducto(controladorinicial, tcpSocket).AccionAgregarTipoProducto);
         frame.pack();
         frame.setVisible(true);
     }
@@ -83,5 +97,11 @@ public class MenuPrincipal {
         frame.pack();
         frame.setVisible(true);
     }
+
+    public static void main(String[] args) throws IOException {
+
+        run();
+    }
+
 
 }

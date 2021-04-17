@@ -14,48 +14,42 @@ public class TCPEchoClientObject {
     private static int PORT = 1234;
     private ObjectInputStream in;
     private ObjectOutputStream out;
-    private Controlador1 controlador;
-
-
-    public static void main(String[] args) {
-        new TCPEchoClientObject();
-    }
 
 
     public TCPEchoClientObject() {
 
-
-        controlador = new Controlador1();
-
         System.out.println("Opening host");
-
         try {
             host = InetAddress.getLocalHost();
         } catch (UnknownHostException e) {
             System.out.println("Host not found!");
             System.exit(1);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        run();
+
     }
 
-    private void run() {
-
-
+    public Socket iniciar() throws IOException {
         Socket sock = null;
+        sock = new Socket(host, PORT);
+        return sock;
+    }
+
+     public void run(Dto object,Socket linea) {
 
         try {
-            sock = new Socket(host, PORT);
 
-            OutputStream outputStream = sock.getOutputStream();
+            OutputStream outputStream = linea.getOutputStream();
             out = new ObjectOutputStream(outputStream);
 
-            InputStream inputStream = sock.getInputStream();
+            InputStream inputStream = linea.getInputStream();
             in = new ObjectInputStream(inputStream);
 
-            Dto objetoDto = controlador.getObjetoARetornar();
+            Dto objetoDto = object;
             out.writeObject(objetoDto);
 
-            System.out.println(controlador.getObjetoARetornar());
+            System.out.println(object);
 
            // System.out.println("Objeto enviado" + out.toString());
 
@@ -82,7 +76,7 @@ public class TCPEchoClientObject {
         }
         finally {
             try {
-                sock.close();
+                linea.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -3,6 +3,7 @@ package cliente.GUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class AccionAgregarUsuario {
     public JPanel MenuAgregarUsuario;
@@ -22,12 +23,16 @@ public class AccionAgregarUsuario {
         btncancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openUsuario();
+                try {
+                    openUsuario();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
     }
 
-    void openUsuario(){
+    void openUsuario() throws IOException {
         JFrame frame = new JFrame("Agregar Usuario");
         frame.setContentPane(new MenuPrincipal().MenuPrincipal);
         frame.pack();
