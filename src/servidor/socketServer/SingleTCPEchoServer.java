@@ -24,7 +24,7 @@ public class SingleTCPEchoServer extends Thread{
 
             //System.out.println("estoy leyendo");
 
-           // InputStream inputStream = socket.getInputStream();
+            // InputStream inputStream = socket.getInputStream();
             in = new ObjectInputStream(socket.getInputStream());
 
 
@@ -72,14 +72,14 @@ public class SingleTCPEchoServer extends Thread{
 
 
 
-           //  out.writeObject(controlador2.devolver());
+            //  out.writeObject(controlador2.devolver());
 
 
 
 
         } catch (IOException | ClassNotFoundException e)
         {
-        e.printStackTrace();
+            e.printStackTrace();
         }
         finally
         {

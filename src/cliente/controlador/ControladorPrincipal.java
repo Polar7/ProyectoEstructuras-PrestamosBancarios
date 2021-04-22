@@ -3,6 +3,8 @@ package cliente.controlador;
 import cliente.GUI.MenuPrincipal;
 import cliente.socketCliente.*;
 
+import java.io.IOException;
+
 public class ControladorPrincipal
 {
     private MenuPrincipal menuGUI;
@@ -11,10 +13,10 @@ public class ControladorPrincipal
 
     public ControladorPrincipal()
     {
-        menuGUI = new MenuPrincipal();
-        menuGUI.main();
+       menuGUI = new MenuPrincipal();
+       menuGUI.main();
 
-        socketCliente = new TCPEchoClientObject();
+       socketCliente = new TCPEchoClientObject();
     }
 
 

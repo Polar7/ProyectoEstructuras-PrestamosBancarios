@@ -57,22 +57,22 @@ public class TCPEchoClientObject {
             }
             while (out.toString().equals("Salir"));
 
-           // OutputStream outputStream = sock.getOutputStream();
-           // out = new ObjectOutputStream(outputStream);
+            // OutputStream outputStream = sock.getOutputStream();
+            // out = new ObjectOutputStream(outputStream);
 
             //InputStream inputStream = sock.getInputStream();
-           // in = new ObjectInputStream(inputStream);
+            // in = new ObjectInputStream(inputStream);
 
             Dto objetoDto = controlador.getObjetoARetornar();
             out.writeObject(objetoDto);
 
             System.out.println("Objeto enviado" + controlador.getObjetoARetornar());
 
-           // Object objetoQueRecibeDelServer = in.readObject();
+            // Object objetoQueRecibeDelServer = in.readObject();
 
-         //   System.out.println(objetoQueRecibeDelServer.toString());
+            //   System.out.println(objetoQueRecibeDelServer.toString());
 
-          //  objetoDto = (Dto) in.readObject();
+            //  objetoDto = (Dto) in.readObject();
 
         }
         catch (IOException  e) {

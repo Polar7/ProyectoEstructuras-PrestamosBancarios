@@ -30,18 +30,18 @@ public class MultiTCPEchoServer {
         try
         {
             do
-                {
+            {
                 sock = serverSocket.accept();
                 new SingleTCPEchoServer(sock);
 
                 System.out.println("¡Se ha conectado un nuevo cliente!");
 
-                }
+            }
             while (true) ;
         }
         catch (IOException e)
         {
-        e.printStackTrace();
+            e.printStackTrace();
         }
 
     }
