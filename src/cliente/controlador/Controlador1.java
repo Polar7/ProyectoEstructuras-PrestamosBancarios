@@ -1,32 +1,28 @@
 package cliente.controlador;
 
-import cliente.GUI.*;
-import cliente.sockerCliente.TCPEchoClientObject;
+import cliente.socketCliente.TCPEchoClientObject;
 import servidor.persistencia.dto.Dto;
 import servidor.persistencia.dto.TipoProductoDto;;
 
-public class Controlador1
-{
+public class Controlador1 {
 
+        public static Dto objetoARetornar;
 
-    public static Dto objetoARetornar;
+        public static final TipoProductoDto objeto  = null ;
 
-    public static final TipoProductoDto objeto  = null ;
+        //private TCPEchoClientObject socketCliente;
 
-    //private TCPEchoClientObject socketCliente;
+        public void enviarObjetoDTO(int id, String nombre)
+        {
+            TipoProductoDto tipoProductoNuevo = new TipoProductoDto(id, nombre);
+            objetoARetornar = tipoProductoNuevo;
+            new TCPEchoClientObject();
 
-    public void enviarObjetoDTO(int id, String nombre)
-    {
-        TipoProductoDto tipoProductoNuevo = new TipoProductoDto(id, nombre);
+        }
 
-        objetoARetornar = tipoProductoNuevo;
-        new TCPEchoClientObject();
+        public Dto getObjetoARetornar()
+        {
+            return objetoARetornar;
+        }
 
-
-    }
-
-    public Dto getObjetoARetornar()
-    {
-        return objetoARetornar;
-    }
 }

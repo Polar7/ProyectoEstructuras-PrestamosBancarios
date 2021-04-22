@@ -1,6 +1,5 @@
 package cliente.GUI;
 
-import cliente.sockerCliente.TCPEchoClientObject;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,12 +12,11 @@ public class MenuPrincipal {
     private JButton btnagregarTipoDeProducto;
     private JButton btneliminarTipoDeProducto;
 
-    private TCPEchoClientObject tcpSocket;
 
     public MenuPrincipal()
     {
 
-        //tcpSocket = new TCPEchoClientObject();
+
 
         btnagregarUsuario.addActionListener(new ActionListener() {
             @Override
@@ -51,7 +49,7 @@ public class MenuPrincipal {
     }
 
 
-    public static void main(String[] args) {
+    public void main() {
         JFrame frame = new JFrame("MenuPrincipal");
         frame.setContentPane(new MenuPrincipal().MenuPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -21,17 +21,15 @@ public class SingleTCPEchoServer extends Thread{
         this.socket = sock;
         try
         {
-         //   in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-         //   out = new PrintWriter(socket.getOutputStream(), true);
-            System.out.println("estoy leyendo");
-            OutputStream outputStream = sock.getOutputStream();
-            out = new ObjectOutputStream(outputStream);
+
+            //System.out.println("estoy leyendo");
+
+           // InputStream inputStream = socket.getInputStream();
+            in = new ObjectInputStream(socket.getInputStream());
 
 
-            InputStream inputStream = sock.getInputStream();
-            in = new ObjectInputStream(inputStream);
-
-            System.out.println("Objeto recibido: " + in);
+            //OutputStream outputStream = socket.getOutputStream();
+            out = new ObjectOutputStream(socket.getOutputStream());
 
 
 
@@ -39,7 +37,7 @@ public class SingleTCPEchoServer extends Thread{
             e.printStackTrace();
         }
         start();
-      //  run();
+
     }
 
     @Override
@@ -48,16 +46,33 @@ public class SingleTCPEchoServer extends Thread{
 
         try
         {
-            System.out.println("Estoy recibiendo...");
+            Dto objetoRecibido = null;
+            do
+            {
+                System.out.println("Estoy recibiendo...");
+                objetoRecibido = (Dto) in.readObject();
 
-            Dto objetoRecibido = (Dto) in.readObject();
+                // Verificacion del objeto que está recibiendo
+                System.out.println("In recibido: " + in);
+                System.out.println("DTO recibido: " + objetoRecibido);
+
+                controlador2.recibirObjeto(objetoRecibido);
+
+                out.writeObject(controlador2.devolver());
+            }
+            while(in.readObject().toString().equals("Salir"));
+
+            System.out.println("¡EL CLIENTE SE HA DESCONECTADO!");
 
 
-            System.out.println("Objeto recibido: " + objetoRecibido);
 
-           // controlador2.recibirObjeto(objetoRecibido);
 
-          //  out.writeObject(controlador2.devolver());
+
+
+
+
+
+           //  out.writeObject(controlador2.devolver());
 
 
 
@@ -71,6 +86,8 @@ public class SingleTCPEchoServer extends Thread{
             try
             {
                 socket.close();
+                in.close();
+                out.close();
             }
             catch (IOException e)
             {

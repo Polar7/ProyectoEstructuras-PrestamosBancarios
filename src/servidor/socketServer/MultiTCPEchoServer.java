@@ -3,7 +3,6 @@ package servidor.socketServer;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import servidor.socketServer.SingleTCPEchoServer;
 
 public class MultiTCPEchoServer {
 
@@ -18,7 +17,7 @@ public class MultiTCPEchoServer {
 
     public MultiTCPEchoServer() {
 
-        System.out.println("Opening Port");
+        System.out.println("Opening Port...");
 
         try {
             serverSocket = new ServerSocket(PORT);
@@ -28,14 +27,22 @@ public class MultiTCPEchoServer {
         }
 
 
-        try {
-            do {
+        try
+        {
+            do
+                {
                 sock = serverSocket.accept();
                 new SingleTCPEchoServer(sock);
-            } while (true) ;
-        } catch (IOException e) {
+
+                System.out.println("¡Se ha conectado un nuevo cliente!");
+
+                }
+            while (true) ;
+        }
+        catch (IOException e)
+        {
         e.printStackTrace();
-    }
+        }
 
     }
 }
