@@ -10,13 +10,13 @@ public class Controlador1 {
 
     public static final TipoProductoDto objeto  = null ;
 
-    //private TCPEchoClientObject socketCliente;
+
 
     public void enviarObjetoDTO(int id, String nombre)
     {
         TipoProductoDto tipoProductoNuevo = new TipoProductoDto(id, nombre);
         objetoARetornar = tipoProductoNuevo;
-        new TCPEchoClientObject();
+
 
     }
 

@@ -11,7 +11,7 @@ public class MenuPrincipal {
     private JButton btneliminarUsuario;
     private JButton btnagregarTipoDeProducto;
     private JButton btneliminarTipoDeProducto;
-
+    private AccionAgregarTipoProducto panelTipoProducto;
 
     public MenuPrincipal()
     {
@@ -81,5 +81,7 @@ public class MenuPrincipal {
         frame.pack();
         frame.setVisible(true);
     }
+
+
 
 }

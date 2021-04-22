@@ -17,16 +17,17 @@ public class AccionAgregarTipoProducto
 
     public AccionAgregarTipoProducto()
     {
-
+        controlador = new Controlador1();
 
         btnagregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                controlador = new Controlador1();
+
                 controlador.enviarObjetoDTO(Integer.parseInt(txtIdentificador.getText()), txtNombre.getText());
+
                 System.out.println(Integer.parseInt(txtIdentificador.getText())+ " " + txtNombre.getText() );
-                System.out.println(controlador.getObjetoARetornar());
+                System.out.println(controlador.getObjetoARetornar().toString());
 
             }
         });

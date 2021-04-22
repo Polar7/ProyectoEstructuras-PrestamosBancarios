@@ -53,6 +53,8 @@ public class TCPEchoClientObject {
 
             do
             {
+                System.out.println("Se va a enviar el objeto...");
+
 
             }
             while (out.toString().equals("Salir"));

@@ -1,5 +1,6 @@
 package cliente.controlador;
 
+import cliente.GUI.AccionAgregarTipoProducto;
 import cliente.GUI.MenuPrincipal;
 import cliente.socketCliente.*;
 
@@ -9,19 +10,25 @@ public class ControladorPrincipal
 {
     private MenuPrincipal menuGUI;
     private TCPEchoClientObject socketCliente;
+    private AccionAgregarTipoProducto agregarTipoProducto;
 
 
-    public ControladorPrincipal()
+    public ControladorPrincipal(MenuPrincipal pMenu,TCPEchoClientObject pCliente )
     {
-       menuGUI = new MenuPrincipal();
+       menuGUI = pMenu;
        menuGUI.main();
 
-       socketCliente = new TCPEchoClientObject();
+       socketCliente = pCliente;
     }
 
+    //sockeCLiente.cambiarIn(accinoAgregarTIpoPorducto.getTextNOmbre);
 
     public static void main(String[] args)
     {
-        new ControladorPrincipal();
+      //  new ControladorPrincipal();
+
+        agregarTipoProducto.getTex
+
+
     }
 }
