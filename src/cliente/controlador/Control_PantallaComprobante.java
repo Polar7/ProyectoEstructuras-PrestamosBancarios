@@ -3,6 +3,7 @@ package cliente.controlador;
 import Almacenadora.Lista;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class Control_PantallaComprobante
 {
@@ -53,6 +54,7 @@ public class Control_PantallaComprobante
         }
         else
         {
+            /*
             JFrame frameConfirmacion = crearVentana();
             JPanel panelNuevo = new JPanel();
             String cadena = "";
@@ -61,7 +63,32 @@ public class Control_PantallaComprobante
                 cadena += objetoRecibido.getValor(i).toString();
             }
             panelNuevo.add(new JLabel(cadena));
-            frameConfirmacion.setContentPane(panelNuevo);
+            frameConfirmacion.setContentPane(panelNuevo);*/
+
+            JFrame frameConfirmacion = crearVentana();
+            //JPanel panelNuevo = new JPanel();
+
+
+            DefaultTableModel tablaTodos = new DefaultTableModel();
+            tablaTodos.addColumn("N°");
+            tablaTodos.addColumn("Data");
+
+            for (int i = 0; i < objetoRecibido.getTamanio(); i++ )
+            {
+                String[] actual = new String[] {(i+1)+"", objetoRecibido.getValor(i).toString() } ;
+                tablaTodos.addRow(actual);
+            }
+
+            JTable tabla = new JTable(tablaTodos);
+
+            JScrollPane scroll  = new JScrollPane(tabla);
+            tabla.setBounds(30,30,500,500);
+            scroll.setBounds(12,22,500,500);
+
+            frameConfirmacion.add(scroll);
+            frameConfirmacion.add(tabla);
+
+
         }
     }
 
