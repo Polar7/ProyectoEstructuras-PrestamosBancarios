@@ -29,7 +29,7 @@ public class BancosDto implements Dto, Serializable {
     @Override
     public String insert() {
 
-        String sql = "INSERT INTO public.bancos(nombre, nit, direccion, cantidadclientes) VALUES ('"
+        String sql = "INSERT INTO public.bancos(nombre, nit, direccion, cantidad_clientes) VALUES ('"
                 + nombre.trim() + "',"
                 + nit+ ",'"
                 + direccion.trim() + "',"
@@ -44,7 +44,7 @@ public class BancosDto implements Dto, Serializable {
         String sql = " UPDATE public.bancos SET nombre= '" + nombre.trim() +
                 "', nit = " +  nit +
                 ", direccion = '" + direccion.trim() +
-                "', cantidadclientes = " + cantidadClientes +
+                "', cantidad_clientes = " + cantidadClientes +
                 " WHERE nombre = '" + nombre.trim()+ "'";
         return sql;
     }

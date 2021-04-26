@@ -72,7 +72,7 @@ public class TipoProductoDto implements Dto, Serializable
 
     @Override
     public String findById() {
-        return "SELECT * FROM person WHERE id = " + id;
+        return "SELECT * FROM tipos_productos WHERE id = " + id;
     }
 
     @Override

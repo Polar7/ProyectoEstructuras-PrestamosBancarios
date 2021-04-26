@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import Almacenadora.Lista;
+import cliente.controlador.Control_PantallaComprobante;
 
 public class TCPEchoClient {
 
@@ -27,7 +28,10 @@ public class TCPEchoClient {
             System.exit(1);
         }
 
-    }public void setInst(String inst){
+    }
+
+    public void setInst(String inst)
+    {
         this.inst = inst;
     }
 
@@ -44,11 +48,13 @@ public class TCPEchoClient {
             PrintWriter out = new PrintWriter(sock.getOutputStream(),true);
             out.println(inst);
 
-            //Lista<Object> objectLista  = (Lista<Object>) in.readObject();
+            Lista<Object> objectLista  = (Lista<Object>) in.readObject();
+
+            Control_PantallaComprobante.recibirParaMostrarConfirmacion(objectLista);
 
 
         }
-        catch (IOException error){
+        catch (IOException | ClassNotFoundException error){
             error.printStackTrace();
             System.out.println(error);
         }

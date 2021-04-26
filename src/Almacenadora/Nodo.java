@@ -31,4 +31,12 @@ public class Nodo<T> implements Serializable
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Nodo{" +
+                dato +
+                '}';
+    }
 }

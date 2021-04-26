@@ -75,6 +75,7 @@ public class Lista<T> implements Serializable
         tamanio++;
     }
 
+
     public T getValor(int posicion)
     {
         if (posicion == 0)

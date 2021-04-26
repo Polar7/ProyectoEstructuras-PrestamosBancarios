@@ -17,7 +17,7 @@ public class AccionModificarTipoProducto {
         btnmodificar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Control_paso.conversionModificar(Integer.parseInt(txtidproducto.getText()),txtnombre.getText());
+                Control_paso.conversionModificarTipoProducto(Integer.parseInt(txtidproducto.getText()),txtnombre.getText());
             }
         });
     }

@@ -1,6 +1,7 @@
 package cliente.GUI;
 
 
+import cliente.controlador.Control_paso;
 import cliente.socketCliente.TCPEchoClient;
 
 import javax.swing.*;
@@ -20,6 +21,12 @@ public class MenuPrincipal {
     private JButton btnagregarproducto;
     private JButton btneliminarproducto;
     private JButton btnmodificarproducto;
+    private JButton btnMostrarTodosTiposProductos;
+    private JButton btnMostrarTodosUsuarios;
+    private JButton btnMostrarTodosBancos;
+    private JButton btnMostrarPorIDUsuarios;
+    private JButton btnMostrarPorIDTipoProductos;
+    private JButton btnMostrarPorIDBancos;
     private JButton btnagregarUsuario;
     private JButton btneliminarUsuario;
     private JButton btnagregarTipoDeProducto;
@@ -86,6 +93,44 @@ public class MenuPrincipal {
                 openModificarBancos();
             }
         });
+
+
+        btnMostrarPorIDBancos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openMostrarIDBancos();
+            }
+        });
+        btnMostrarPorIDUsuarios.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openMostrarIDUsuario();
+            }
+        });
+        btnMostrarPorIDTipoProductos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openMostrarIDTipoProducto();
+            }
+        });
+        btnMostrarTodosUsuarios.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Control_paso.conversionMostrarTodosUsuario();
+            }
+        });
+        btnMostrarTodosTiposProductos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Control_paso.conversionMostrarTodosTipoProducto();
+            }
+        });
+        btnMostrarTodosBancos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Control_paso.conversionMostrarTodosBancos();
+            }
+        });
     }
 
     public static void main(String[] args) throws IOException {
@@ -93,7 +138,7 @@ public class MenuPrincipal {
         frame.setContentPane(new MenuPrincipal().MenuPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setResizable(false);
+        frame.setResizable(true);
         frame.setVisible(true);
     }
 
@@ -122,6 +167,15 @@ public class MenuPrincipal {
         frame.setVisible(true);
     }
 
+    void openMostrarIDUsuario(){
+        JFrame frame = new JFrame("Mostrar por ID Usuario");
+        frame.setContentPane(new AccionMostrarIDUsuario().panelMostrarIDUsuario);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
+
+
 
 
 
@@ -148,6 +202,13 @@ public class MenuPrincipal {
         frame.setResizable(false);
         frame.setVisible(true);
     }
+    void openMostrarIDTipoProducto(){
+        JFrame frame = new JFrame("Mostrar por ID TipoProducto");
+        frame.setContentPane(new AccionMostrarIDTipoProducto().panelMostrarIDTIpoProducto);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
 
 
 
@@ -169,6 +230,13 @@ public class MenuPrincipal {
     void openModificarBancos(){
         JFrame frame = new JFrame("Modificar Bancos");
         frame.setContentPane(new AccionModificarBancos().AccionModificarBancos);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
+    void openMostrarIDBancos(){
+        JFrame frame = new JFrame("Mostrar por ID Bancos");
+        frame.setContentPane(new AccionMostrarIDBancos().panelAccionMostrarIDBancos);
         frame.pack();
         frame.setResizable(false);
         frame.setVisible(true);

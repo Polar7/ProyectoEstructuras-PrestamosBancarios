@@ -22,30 +22,53 @@ public class Control_paso {
     private static BancosDao bancosDao;
 
 
+    //------------------------------------------------------------------------------------------------------------------
     //Controladores de conexion tipo producto
-    public static void conversioninsertar(int id, String nombre){
+    public static void conversionInsertarTipoProducto(int id, String nombre){
 
         tipoProductoDto = new TipoProductoDto(id, nombre);
         tipoProductoDao = new TipoProductoDao();
 
         String inst = tipoProductoDao.insert(tipoProductoDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
-    public static void conversioneliminar(int id){
+    public static void conversionEliminarTipoProducto(int id){
         tipoProductoDto = new TipoProductoDto(id);
         tipoProductoDao = new TipoProductoDao();
 
         String inst = tipoProductoDao.delete(tipoProductoDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
-    public static void conversionModificar(int id, String nombre){
+    public static void conversionModificarTipoProducto(int id, String nombre){
 
         tipoProductoDto = new TipoProductoDto(id, nombre);
         tipoProductoDao = new TipoProductoDao();
 
         String inst = tipoProductoDao.update(tipoProductoDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
+    public static void conversionMostarPorIDTipoProducto(int id){
+
+        tipoProductoDto = new TipoProductoDto(id);
+        tipoProductoDao = new TipoProductoDao();
+
+        String inst = tipoProductoDao.findById(tipoProductoDto);
+        iniciarEnvio(inst);
+    }
+    public static void conversionMostrarTodosTipoProducto(){
+
+        tipoProductoDto = new TipoProductoDto();
+        tipoProductoDao = new TipoProductoDao();
+
+        String inst = tipoProductoDao.read(tipoProductoDto);
+        iniciarEnvio(inst);
+    }
+
+
+
+
+    //------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------
 
     //controladores de conexion de Usuario
     public static void conversionAgregarUsuario(int cedula, String nombre,String apellido,int telefono, Date fecha, String  direccion,int score){
@@ -53,7 +76,7 @@ public class Control_paso {
         usuarioDao = new UsuarioDao();
 
         String inst = usuarioDao.insert(usuarioDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
     public static void conversioneliminarUsuario(int cedula){
 
@@ -61,22 +84,42 @@ public class Control_paso {
         usuarioDao = new UsuarioDao();
 
         String inst = usuarioDao.delete(usuarioDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
     public static void conversionModificarUsuario(int cedula, String nombre,String apellido,int telefono, Date fecha, String  direccion,int score){
         usuarioDto = new UsuarioDto(cedula,nombre,apellido,telefono,fecha,direccion,score);
         usuarioDao = new UsuarioDao();
 
         String inst = usuarioDao.update(usuarioDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
+    public static void conversionMostrarPorIDUsuario(int cedula){
+
+        usuarioDto = new UsuarioDto(cedula);
+        usuarioDao = new UsuarioDao();
+
+        String inst = usuarioDao.findById(usuarioDto);
+        iniciarEnvio(inst);
+    }
+    public static void conversionMostrarTodosUsuario(){
+
+        usuarioDto = new UsuarioDto();
+        usuarioDao = new UsuarioDao();
+
+        String inst = usuarioDao.read(usuarioDto);
+        iniciarEnvio(inst);
+    }
+
+    //------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------
+
     //Controles de conexion  para bancos
     public static void conversionAgregarBancos(String nombre,int nit,String  direccion,int cantidadclientes){
         bancosDto = new BancosDto(nombre,nit,direccion,cantidadclientes);
         bancosDao = new BancosDao();
 
         String inst = bancosDao.insert(bancosDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
     public static void conversioneliminarBancos(String nombre){
 
@@ -84,17 +127,38 @@ public class Control_paso {
         bancosDao = new BancosDao();
 
         String inst = bancosDao.delete(bancosDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
     }
     public static void conversionModificarBancos(String nombre,int nit,String  direccion,int cantidadclientes){
         bancosDto = new BancosDto(nombre,nit,direccion,cantidadclientes);
         bancosDao = new BancosDao();
 
         String inst = bancosDao.update(bancosDto);
-        iniciarenvio(inst);
+        iniciarEnvio(inst);
+    }
+    public static void conversionMostrarPorIDBancos(String nombre){
+
+        bancosDto = new BancosDto(nombre);
+        bancosDao = new BancosDao();
+
+        String inst = bancosDao.findById(bancosDto);
+        iniciarEnvio(inst);
+    }
+    public static void conversionMostrarTodosBancos(){
+
+        bancosDto = new BancosDto();
+        bancosDao = new BancosDao();
+
+        String inst = bancosDao.read(bancosDto);
+        iniciarEnvio(inst);
     }
 
-    static void iniciarenvio(String inst){
+
+
+    //------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------
+
+    static void iniciarEnvio(String inst){
         Control_conexion.manejarConexion(inst);
         Control_conexion.iniciarconexion();
     }

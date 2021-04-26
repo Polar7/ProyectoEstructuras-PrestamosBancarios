@@ -16,7 +16,7 @@ public class AccionEliminarTipoProducto {
         btneliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Control_paso.conversioneliminar(Integer.parseInt(txtidProductoAEliminar.getText()));
+                Control_paso.conversionEliminarTipoProducto(Integer.parseInt(txtidProductoAEliminar.getText()));
             }
         });
     }
