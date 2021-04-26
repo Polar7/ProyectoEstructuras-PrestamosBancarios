@@ -1,34 +1,35 @@
 package cliente.GUI;
 
-import cliente.controlador.Controlador1;
+import cliente.controlador.Control_paso;
+import cliente.socketCliente.TCPEchoClient;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.Socket;
 
 public class AccionAgregarTipoProducto
 {
-    private Controlador1 controlador;
+
     public JPanel AccionAgregarTipoProducto;
     private JTextField txtIdentificador;
     private JTextField txtNombre;
     private JButton btncancelar;
     private JButton btnagregar;
 
+
+
     public AccionAgregarTipoProducto()
     {
-        controlador = new Controlador1();
+
 
         btnagregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
-                controlador.enviarObjetoDTO(Integer.parseInt(txtIdentificador.getText()), txtNombre.getText());
-
-                System.out.println(Integer.parseInt(txtIdentificador.getText())+ " " + txtNombre.getText() );
-                System.out.println(controlador.getObjetoARetornar().toString());
-
+                Control_paso.conversioninsertar(Integer.parseInt(txtIdentificador.getText()),txtNombre.getText());
+                txtNombre.setText("");
+                txtIdentificador.setText("");
             }
         });
     }

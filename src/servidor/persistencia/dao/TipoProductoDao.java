@@ -1,13 +1,12 @@
 package servidor.persistencia.dao;
 
-import servidor.persistencia.DataSource;
 import servidor.persistencia.dto.TipoProductoDto;
 
 public class TipoProductoDao extends Dao<TipoProductoDto>{
 
     public TipoProductoDao()
     {
-        super(DataSource.getInstance());
+        super();
     }
 /*
     @Override

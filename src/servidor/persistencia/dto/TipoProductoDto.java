@@ -67,7 +67,7 @@ public class TipoProductoDto implements Dto, Serializable
     @Override
     public String delete()
     {
-        return "DELETE FROM person WHERE id = " + id;
+        return "delete from tipos_productos WHERE id = " + id;
     }
 
     @Override

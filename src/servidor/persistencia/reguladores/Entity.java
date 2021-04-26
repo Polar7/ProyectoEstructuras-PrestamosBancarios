@@ -1,6 +1,6 @@
-package servidor.persistencia;
+package servidor.persistencia.reguladores;
 
-import servidor.contenedora.listaSimplementeEnlazada.Lista;
+import Almacenadora.Lista;
 import servidor.persistencia.dto.Dto;
 
 import java.lang.reflect.Method;
@@ -20,16 +20,16 @@ public class Entity<T extends Dto> {
     public Entity(Class<? extends Dto> nameOfClass)
     {
         this.nameOfClass = nameOfClass;
-        this.methodsOfClass = nameOfClass.getMethods();
+
     }
 
     public Lista<T> getMultipleRows(ResultSet resultSet) {
 
         Lista<T> collections = new Lista<>();
         try {
-
+            this.methodsOfClass = nameOfClass.getMethods();
             while (resultSet.next()) {
-                collections.adicionarAlFinal(getData(resultSet));
+                collections.agregarAlFinal(getData(resultSet));
             }
         } catch (Exception e) {
             e.printStackTrace();

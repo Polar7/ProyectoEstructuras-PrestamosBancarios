@@ -5,39 +5,34 @@ import cliente.controlador.Control_paso;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class AccionAgregarUsuario {
-    public JPanel MenuAgregarUsuario;
+public class AccionModificarUsuario {
+    public JPanel AccionModificarUsuario;
     private JTextField txtcedula;
+    private JButton cancelarButton;
+    private JButton modificarButton;
     private JTextField txtnombre;
     private JTextField txtapellido;
     private JTextField txttelefono;
     private JTextField txtfecha;
-    private JButton btncancelar;
-    private JButton btnagregar;
     private JTextField txtdireccion;
     private JTextField txtscore;
 
-
-    public AccionAgregarUsuario()
-    {
-
-        btnagregar.addActionListener(new ActionListener() {
+    public AccionModificarUsuario() {
+        modificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String fecha=txtfecha.getText().trim();
-                SimpleDateFormat formato =new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
                 try {
-                    Date nacimiento = formato.parse(fecha);
-                    Control_paso.conversionAgregarUsuario(Integer.parseInt(txtcedula.getText()),txtnombre.getText(),txtapellido.getText(),Integer.parseInt(txttelefono.getText()),nacimiento,txtdireccion.getText(),Integer.parseInt(txtscore.getText()));
+                    Date nacimiento=formatter1.parse(fecha);
+                    Control_paso.conversionModificarUsuario(Integer.parseInt(txtcedula.getText()),txtnombre.getText(), txtapellido.getText(),Integer.parseInt(txttelefono.getText()),nacimiento,txtdireccion.getText(),Integer.parseInt(txtscore.getText()));
                 } catch (ParseException parseException) {
                     parseException.printStackTrace();
                 }
-
                 txtcedula.setText("");
                 txtnombre.setText("");
                 txtapellido.setText("");
@@ -46,8 +41,6 @@ public class AccionAgregarUsuario {
                 txttelefono.setText("");
                 txtscore.setText("");
             }
-
         });
     }
-
 }

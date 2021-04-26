@@ -1,4 +1,4 @@
-package servidor.persistencia;
+package servidor.persistencia.reguladores;
 
 import java.io.FileInputStream;
 import java.sql.*;
@@ -54,8 +54,9 @@ public class DataSource
 		return resultSet;
 	}
 
-	public boolean runUpdateQuery(String sql)
+	public boolean runExecuteUpdate(String sql)
 	{
+
 		int rows=0;
 		try {
 			Statement statement = con.createStatement();

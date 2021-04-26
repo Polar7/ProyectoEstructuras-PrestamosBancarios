@@ -1,13 +1,12 @@
 package servidor.persistencia.dao;
 
-import servidor.persistencia.DataSource;
 import servidor.persistencia.dto.BancosDto;
 
 public class BancosDao extends Dao<BancosDto>
 {
     public BancosDao()
     {
-        super(DataSource.getInstance());
+        super();
     }
 /*
     @Override

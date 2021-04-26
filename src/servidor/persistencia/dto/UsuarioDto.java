@@ -42,7 +42,7 @@ public class UsuarioDto implements Dto, Serializable {
     @Override
     public String insert() {
 
-        String sql = "INSERT INTO public.usuarios(cedula, nombre, apellido, telefono, fecha_nacimiento, direccion, score) VALUES ("
+        String sql = "INSERT INTO public.usuarios(cedula, nombre, apellido, telefono, fechanacimiento, direccion, score) VALUES ("
                 + cedula +", '"
                 + nombre.trim() + "','"
                 + apellido.trim() + "','"
@@ -60,22 +60,22 @@ public class UsuarioDto implements Dto, Serializable {
     {
         String sql = " UPDATE public.usuarios SET nombre= '" + nombre.trim() +
             "', apellido = '" +  apellido.trim() +
-            "', telefono = " + telefono +
-            "', fecha_nacimiento = '" + fechaNacimiento +
+            "', telefono = '" + telefono +
+            "', fechanacimiento = '" + fechaNacimiento +
             "', direccion = '" + direccion +
             "', score = " + score +
-            "WHERE cedula = " + cedula;
+            " WHERE cedula = " + cedula;
         return sql;
     }
 
     @Override
     public String delete() {
-        return "DELETE FROM person WHERE cedula = " + cedula;
+        return "DELETE FROM usuarios WHERE cedula = " + cedula;
     }
 
     @Override
     public String findById() {
-        return "SELECT * FROM person WHERE cedula = " + cedula;
+        return "SELECT * FROM usuarios WHERE cedula = " + cedula;
     }
 
     @Override

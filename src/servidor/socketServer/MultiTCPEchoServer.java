@@ -1,5 +1,7 @@
 package servidor.socketServer;
 
+import servidor.persistencia.reguladores.DataSource;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -10,6 +12,7 @@ public class MultiTCPEchoServer {
     public static final int PORT = 1234;
     private ServerSocket serverSocket;
     private Socket sock = null;
+    DataSource dataSource;
 
     public static void main(String[] args) {
         new MultiTCPEchoServer();
@@ -17,6 +20,7 @@ public class MultiTCPEchoServer {
 
     public MultiTCPEchoServer() {
 
+        dataSource = DataSource.getInstance();
         System.out.println("Opening Port...");
 
         try {
@@ -32,8 +36,7 @@ public class MultiTCPEchoServer {
             do
             {
                 sock = serverSocket.accept();
-                new SingleTCPEchoServer(sock);
-
+                new SingleTCPEchoServer(sock,dataSource);
                 System.out.println("¡Se ha conectado un nuevo cliente!");
 
             }

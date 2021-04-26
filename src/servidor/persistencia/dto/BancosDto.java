@@ -29,12 +29,11 @@ public class BancosDto implements Dto, Serializable {
     @Override
     public String insert() {
 
-        String sql = "INSERT INTO public.bancos(nombre, nit, direccion, cantidad_clientes) VALUES ("
-                + nombre.trim() + "','"
-                + nit+ "','"
-                + direccion.trim() + "','"
-                + cantidadClientes + "','"
-                + "');";
+        String sql = "INSERT INTO public.bancos(nombre, nit, direccion, cantidadclientes) VALUES ('"
+                + nombre.trim() + "',"
+                + nit+ ",'"
+                + direccion.trim() + "',"
+                + cantidadClientes + ")";
         System.out.println(sql);
         return sql;
     }
@@ -42,23 +41,22 @@ public class BancosDto implements Dto, Serializable {
     @Override
     public String update()
     {
-        String sql = " UPDATE public.usuarios SET nombre= '" + nombre.trim() +
+        String sql = " UPDATE public.bancos SET nombre= '" + nombre.trim() +
                 "', nit = " +  nit +
                 ", direccion = '" + direccion.trim() +
-                "', cantidad_clientes = " + cantidadClientes +
-
-                "WHERE nombre = " + nombre.trim();
+                "', cantidadclientes = " + cantidadClientes +
+                " WHERE nombre = '" + nombre.trim()+ "'";
         return sql;
     }
 
     @Override
     public String delete() {
-        return "DELETE FROM bancos WHERE nombre = " + nombre.trim();
+        return "DELETE FROM bancos WHERE nombre = '" + nombre.trim()+"'";
     }
 
     @Override
     public String findById() {
-        return "SELECT * FROM bancos WHERE nombre = " + nombre.trim();
+        return "SELECT * FROM bancos WHERE nombre = '" + nombre.trim()+ "'";
     }
 
     @Override

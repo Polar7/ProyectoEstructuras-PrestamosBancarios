@@ -1,56 +1,37 @@
 
 package servidor.persistencia.dao;
 
-import servidor.persistencia.DataSource;
-import servidor.persistencia.Entity;
 import servidor.persistencia.dto.Dto;
-import servidor.contenedora.listaSimplementeEnlazada.Lista;
 
-import java.sql.ResultSet;
 
-/**
- * @author Saul Osbaldo Aponte Lopez
- */
 public abstract class Dao<T extends Dto>
 {
 
-    private final DataSource dataSource;
+    protected void Dto(){}
 
-    protected Dao(DataSource dataSource)
+    public String insert(Dto data)
     {
-        this.dataSource = dataSource;
+        return data.insert();
     }
 
-    public boolean insert(Dto data)
+    public String read(Dto data)
     {
-        return dataSource.runUpdateQuery(data.insert());
+        return data.read();
     }
 
-   // public abstract Lista<T> read();
-   public Lista<T> read(Dto data)
-   {
-       Entity<T> entity = new Entity<T>(data.getClass());
-       ResultSet resultSet = dataSource.runQuery(data.read());
-       return entity.getMultipleRows(resultSet);
-   }
-
-    public boolean update(Dto data)
+    public String update(Dto data)
     {
-        return dataSource.runUpdateQuery(data.update());
+        return data.update();
     }
 
-    public boolean delete(Dto data)
+    public String delete(Dto data)
     {
-        return dataSource.runUpdateQuery(data.delete());
+        return data.delete();
     }
 
-   // public abstract T findById(Dto data);
-
-    public T findById(Dto data)
+    public String findById(Dto data)
     {
-        Entity<T> entity = new Entity<T>(data.getClass());
-        ResultSet resultSet = dataSource.runQuery(data.findById());
-        return entity.getSingleRow(resultSet);
+        return data.findById();
     }
 
 }

@@ -1,100 +1,70 @@
 package servidor.socketServer;
 
-import servidor.controlador.Controlador2;
-import servidor.persistencia.dto.Dto;
+import servidor.persistencia.reguladores.Controladorordenesejecucion;
+import servidor.persistencia.reguladores.Controladorordenes;
+import servidor.persistencia.reguladores.DataSource;
 
 import java.io.*;
 import java.net.Socket;
 
-public class SingleTCPEchoServer extends Thread{
+public class SingleTCPEchoServer extends Thread {
 
     //Socket dirigido a un hilo
     public static final int PORT = 1234;
     private Socket socket = null;
-    private ObjectInputStream in;
+    private DataSource dataSource = null;
+    private BufferedReader in;
     private ObjectOutputStream out;
 
-    private Controlador2 controlador2;
 
-    public SingleTCPEchoServer(Socket sock) {
+    public SingleTCPEchoServer(Socket sock, DataSource datasource) {
 
         this.socket = sock;
-        try
-        {
-
-            //System.out.println("estoy leyendo");
-
+        this.dataSource = datasource;
+        try {
             // InputStream inputStream = socket.getInputStream();
-            in = new ObjectInputStream(socket.getInputStream());
-
-
+            this.in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             //OutputStream outputStream = socket.getOutputStream();
-            out = new ObjectOutputStream(socket.getOutputStream());
-
-
+            OutputStream outputStream = sock.getOutputStream();
+            out = new ObjectOutputStream(outputStream);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        start();
+        this.start();
 
     }
 
     @Override
-    public void run()
-    {
+    public void run() {
+        String inst = null;
+        try {
+            inst = this.in.readLine();
 
-        try
-        {
-            Dto objetoRecibido = null;
-            do
-            {
-                System.out.println("Estoy recibiendo...");
-                objetoRecibido = (Dto) in.readObject();
-
-                // Verificacion del objeto que está recibiendo
-                System.out.println("In recibido: " + in);
-                System.out.println("DTO recibido: " + objetoRecibido);
-
-                controlador2.recibirObjeto(objetoRecibido);
-
-                out.writeObject(controlador2.devolver());
+            if (!inst.equals("EXIT")) {
+                //SELECT * FROM marcas
+                //runQuery - Muliple - Busqueme todo lo de la tabla
+                if (inst.contains("SELECT") && inst.indexOf("SELECT") == 0 &&
+                        inst.contains("*") && inst.indexOf("*") <= 7) {
+                    out.writeObject(Controladorordenes.objMultipleResult(inst, dataSource));
+                } else //runQuery - Simple
+                    if (inst.contains("SELECT") && inst.indexOf("SELECT") == 0) {
+                       out.writeObject(Controladorordenes.objSimpleResult(inst, dataSource));
+                    } else    //executeUpdate
+                    {
+                        out.writeObject(Controladorordenesejecucion.resultExecuteUpdate(inst, dataSource));
+                    }
             }
-            while(in.readObject().toString().equals("Salir"));
-
-            System.out.println("¡EL CLIENTE SE HA DESCONECTADO!");
-
-
-
-
-
-
-
-
-
-            //  out.writeObject(controlador2.devolver());
-
-
-
-
-        } catch (IOException | ClassNotFoundException e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally
-        {
-            try
-            {
-                socket.close();
-                in.close();
-                out.close();
-            }
-            catch (IOException e)
-            {
+        } finally {
+            try {
+                this.socket.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
     }
 }
+
+

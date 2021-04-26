@@ -1,6 +1,5 @@
 package servidor.persistencia.dao;
 
-import servidor.persistencia.DataSource;
 import servidor.persistencia.dto.UsuarioDto;
 
 /**
@@ -10,7 +9,7 @@ public class UsuarioDao extends Dao<UsuarioDto> {
 
     public UsuarioDao()
     {
-        super(DataSource.getInstance());
+        super();
     }
 /*
     @Override
