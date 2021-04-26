@@ -12,10 +12,12 @@ public class TCPEchoClient {
 
     private InetAddress host;
     private static final int PORT = 1234;
-    private String inst;
+    private String scriptSQL;
 
 
-
+    /**
+     * Inicializa un host
+     */
     public TCPEchoClient() {
 
         System.out.println("Empezando El Host");
@@ -30,11 +32,18 @@ public class TCPEchoClient {
 
     }
 
-    public void setInst(String inst)
+    /**
+     * Cambia la instruccion sql
+     * @param pInst Instruccion sql nueva
+     */
+    public void setScriptSQL(String pInst)
     {
-        this.inst = inst;
+        this.scriptSQL = pInst;
     }
 
+    /**
+     * Envia el SQL y recibe un objeto resultado de la operacion con el socket del server
+     */
     public void enviar() {
 
         Socket sock = null;
@@ -46,10 +55,13 @@ public class TCPEchoClient {
             ObjectInputStream in = new ObjectInputStream(inputStream);
 
             PrintWriter out = new PrintWriter(sock.getOutputStream(),true);
-            out.println(inst);
+            //muestro en consola el script
+            out.println(scriptSQL);
 
+            //recibe el objeto mandado por el socket del server
             Lista<Object> objectLista  = (Lista<Object>) in.readObject();
 
+            //se lo envia al controlador para graficar el resultado
             Control_PantallaComprobante.recibirParaMostrarConfirmacion(objectLista);
 
 

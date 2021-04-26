@@ -7,6 +7,7 @@ public class Lista<T> implements Serializable
     private Nodo<T> inicio;
 
     private int tamanio;
+
     /**
      * Constructor
      */
@@ -15,22 +16,34 @@ public class Lista<T> implements Serializable
         inicio = null;
         tamanio = 0;
     }
+
+
     /**
      * Consulta si la lista esta vacia.
+     * @return True si está vacia, false de lo contrario
      */
     public boolean esVacia()
     {
         return inicio == null;
     }
+
+
+
+
     /**
      * Consulta cuantos elementos (nodos) tiene la lista.
+     * @return Total de elementos en la lista
      */
     public int getTamanio()
     {
         return tamanio;
     }
+
+
+
     /**
      * Agrega un nuevo nodo al final de la lista.
+     * @param dato Dato para crear un nodo a agregar
      */
     public void agregarAlFinal(T dato)
     {
@@ -55,27 +68,13 @@ public class Lista<T> implements Serializable
         // Incrementa el contador de tamaño de la lista
         tamanio++;
     }
+
+
     /**
-     * Agrega un nuevo nodo al inicio de la lista.
+     * Retorna el valor (data) de la posicion especificada
+     * @param posicion Posicion del nodo
+     * @return El valor del nodo
      */
-    public void agregarAlInicio(T dato)
-    {
-        Nodo<T> nuevo = new Nodo<T>();
-        nuevo.setValor(dato);
-        if (esVacia())
-        {
-            inicio = nuevo;
-        }
-        else
-        {
-            nuevo.setSiguiente(inicio);
-            inicio = nuevo;
-        }
-
-        tamanio++;
-    }
-
-
     public T getValor(int posicion)
     {
         if (posicion == 0)

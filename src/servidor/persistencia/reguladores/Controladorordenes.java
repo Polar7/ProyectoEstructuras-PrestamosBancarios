@@ -7,6 +7,13 @@ import java.sql.ResultSet;
 
 public  class Controladorordenes
 {
+
+    /**
+     *
+     * @param sql
+     * @param dataSource
+     * @return
+     */
     public static Lista<? extends Dto> objMultipleResult(String sql, DataSource dataSource )
     {
         ResultSet resultSet;
@@ -16,6 +23,12 @@ public  class Controladorordenes
         return obj;
     }
 
+    /**
+     *
+     * @param sql
+     * @param dataSource
+     * @return
+     */
     public static Dto objSimpleResult(String sql, DataSource dataSource )
     {
         ResultSet resultSet;
@@ -25,53 +38,64 @@ public  class Controladorordenes
         return obj;
     }
 
+    /**
+     *
+     * @param sql
+     * @param resultSet
+     * @return
+     */
     private static Lista<? extends Dto> resultMultipleRaw(String sql, ResultSet resultSet)
     {
-        if(sql.contains("public.bancos"))
+        Lista<? extends Dto> raws = null;
+
+        if(sql.contains("bancos"))
         {
             Entity<BancosDto> entity = new Entity<BancosDto>(BancosDto.class);
-            return entity.getMultipleRows(resultSet);
+            raws = entity.getMultipleRows(resultSet);
         }else
-        if(sql.contains("public.productos"))
-        {
-            Entity<ProductosDto> entity = new Entity<ProductosDto>(ProductosDto.class);
-            return entity.getMultipleRows(resultSet);
-        }else
-        if(sql.contains("public.tipos_productos"))
+        if(sql.contains("tipos_productos"))
         {
             Entity<TipoProductoDto> entity = new Entity<TipoProductoDto>(TipoProductoDto.class);
-            return entity.getMultipleRows(resultSet);
+            raws = entity.getMultipleRows(resultSet);
         }
-        else
+        else if(sql.contains("usuarios"))
         {
             Entity<UsuarioDto> entity = new Entity<UsuarioDto>(UsuarioDto.class);
-            return entity.getMultipleRows(resultSet);
+            raws = entity.getMultipleRows(resultSet);
         }
 
-
+        return raws;
     }
 
+    /**
+     *
+     * @param sql
+     * @param resultSet
+     * @return
+     */
     private static Dto resultSimpleRaw(String sql, ResultSet resultSet)
     {
-        if(sql.contains("public.bancos"))
+        Dto raw = null;
+
+        if(sql.contains("bancos"))
         {
             Entity<BancosDto> entity = new Entity<BancosDto>(BancosDto.class);
-            return entity.getSingleRow(resultSet);
-        }else
-        if(sql.contains("public.productos"))
-        {
-            Entity<ProductosDto> entity = new Entity<ProductosDto>(ProductosDto.class);
-            return entity.getSingleRow(resultSet);
-        }else
-        if(sql.contains("public.tipo_productos"))
+            raw =  entity.getSingleRow(resultSet);
+        }
+        else if(sql.contains("tipos_productos"))
         {
             Entity<TipoProductoDto> entity = new Entity<TipoProductoDto>(TipoProductoDto.class);
-            return entity.getSingleRow(resultSet);
-        }else
+            raw = entity.getSingleRow(resultSet);
+        }
+        else if(sql.contains("usuarios"))
         {
             Entity<UsuarioDto> entity = new Entity<UsuarioDto>(UsuarioDto.class);
-            return entity.getSingleRow(resultSet);
+            raw = entity.getSingleRow(resultSet);
         }
-
+        return raw;
     }
+
+
+
+
 }

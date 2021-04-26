@@ -14,22 +14,31 @@ public class MultiTCPEchoServer {
     private Socket sock = null;
     DataSource dataSource;
 
-    public static void main(String[] args) {
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args)
+    {
         new MultiTCPEchoServer();
     }
 
-    public MultiTCPEchoServer() {
+    /**
+     * Crea el multihilos
+     */
+    public MultiTCPEchoServer()
+    {
 
         dataSource = DataSource.getInstance();
         System.out.println("Opening Port...");
 
-        try {
+        try
+        {
             serverSocket = new ServerSocket(PORT);
         } catch (IOException e) {
             System.out.println("Port Error!!!");
             System.exit(1);
         }
-
 
         try
         {
@@ -38,7 +47,6 @@ public class MultiTCPEchoServer {
                 sock = serverSocket.accept();
                 new SingleTCPEchoServer(sock,dataSource);
                 System.out.println("¡Se ha conectado un nuevo cliente!");
-
             }
             while (true) ;
         }

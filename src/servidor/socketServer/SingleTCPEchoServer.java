@@ -17,14 +17,21 @@ public class SingleTCPEchoServer extends Thread {
     private ObjectOutputStream out;
 
 
+    /**
+     * Crea un hilo conectado al multihilos
+     * @param sock
+     * @param datasource
+     */
     public SingleTCPEchoServer(Socket sock, DataSource datasource) {
 
         this.socket = sock;
         this.dataSource = datasource;
-        try {
-            // InputStream inputStream = socket.getInputStream();
+
+        try
+        {
+
             this.in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
-            //OutputStream outputStream = socket.getOutputStream();
+
             OutputStream outputStream = sock.getOutputStream();
             out = new ObjectOutputStream(outputStream);
 
@@ -35,32 +42,45 @@ public class SingleTCPEchoServer extends Thread {
 
     }
 
+
+    /**
+     * Recibe la instruccion sql y devuelve el objeto resultado de la operacion
+     */
     @Override
     public void run() {
-        String inst = null;
-        try {
-            inst = this.in.readLine();
 
-            if (!inst.equals("EXIT")) {
-                //SELECT * FROM marcas
-                //runQuery - Muliple - Busqueme todo lo de la tabla
-                if (inst.contains("SELECT") && inst.indexOf("SELECT") == 0 &&
-                        inst.contains("*") && inst.indexOf("*") <= 7) {
-                    out.writeObject(Controladorordenes.objMultipleResult(inst, dataSource));
-                } else //runQuery - Simple
-                    if (inst.contains("SELECT") && inst.indexOf("SELECT") == 0) {
-                       out.writeObject(Controladorordenes.objSimpleResult(inst, dataSource));
-                    } else    //executeUpdate
-                    {
-                        out.writeObject(Controladorordenesejecucion.resultExecuteUpdate(inst, dataSource));
-                    }
+        String scriptSQL = null;
+
+        try
+        {
+            scriptSQL = this.in.readLine();
+
+            if (!scriptSQL.equals("EXIT"))
+            {
+
+                if (scriptSQL.contains("SELECT") && scriptSQL.indexOf("SELECT") == 0 &&
+                        scriptSQL.contains("*") && scriptSQL.indexOf("*") <= 7)
+                {
+                    out.writeObject(Controladorordenes.objMultipleResult(scriptSQL, dataSource));
+                } else if (scriptSQL.contains("SELECT") && scriptSQL.indexOf("SELECT") == 0)
+                {
+                    out.writeObject(Controladorordenes.objSimpleResult(scriptSQL, dataSource));
+                } else
+                {
+                    out.writeObject(Controladorordenesejecucion.resultExecuteUpdate(scriptSQL, dataSource));
+                }
+
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
-        } finally {
-            try {
+        } finally
+        {
+            try
+            {
                 this.socket.close();
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
         }

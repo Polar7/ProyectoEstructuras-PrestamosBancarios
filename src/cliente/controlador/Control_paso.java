@@ -10,10 +10,11 @@ import servidor.persistencia.dto.UsuarioDto;
 import java.util.Date;
 
 
-public class Control_paso {
+public class Control_paso
+{
 
-     private static TipoProductoDto tipoProductoDto;
-     private static TipoProductoDao tipoProductoDao;
+    private static TipoProductoDto tipoProductoDto;
+    private static TipoProductoDao tipoProductoDao;
 
     private static UsuarioDto usuarioDto;
     private static UsuarioDao usuarioDao;
@@ -158,7 +159,12 @@ public class Control_paso {
     //------------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------------
 
-    static void iniciarEnvio(String inst){
+    /**
+     * Abre el camino para el envio de la informacion
+     * @param inst COdigo sql
+     */
+    static void iniciarEnvio(String inst)
+    {
         Control_conexion.manejarConexion(inst);
         Control_conexion.iniciarconexion();
     }
