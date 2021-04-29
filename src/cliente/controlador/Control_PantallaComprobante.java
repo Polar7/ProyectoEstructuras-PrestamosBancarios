@@ -1,6 +1,7 @@
 package cliente.controlador;
 
 import Almacenadora.Lista;
+import cliente.GUI.FramePantallaComprobante;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -31,14 +32,14 @@ public class Control_PantallaComprobante
             {
                 if((Boolean)objetoRecibido.getValor(0) == true)
                 {
-                    JFrame frameConfirmacion = crearVentana();
+                    JFrame frameConfirmacion = new FramePantallaComprobante();
                     JPanel panelNuevo = new JPanel();
                     panelNuevo.add(new JLabel("SE HA EJECUTADO CORRECTAMENTE LA INSTRUCCION"));
                     frameConfirmacion.setContentPane(panelNuevo);
                 }
                 else if((Boolean)objetoRecibido.getValor(0) == false)
                 {
-                    JFrame frameConfirmacion = crearVentana();
+                    JFrame frameConfirmacion = new FramePantallaComprobante();
                     JPanel panelNuevo = new JPanel();
                     panelNuevo.add(new JLabel("NO SE HA EJECUTADO CORRECTAMENTE LA INSTRUCCION"));
                     frameConfirmacion.setContentPane(panelNuevo);
@@ -46,7 +47,7 @@ public class Control_PantallaComprobante
             }
             else
             {
-                JFrame frameConfirmacion = crearVentana();
+                JFrame frameConfirmacion = new FramePantallaComprobante();
                 JPanel panelNuevo = new JPanel();
                 panelNuevo.add(new JLabel(objetoRecibido.getValor(0).toString()));
                 frameConfirmacion.setContentPane(panelNuevo);
@@ -65,7 +66,7 @@ public class Control_PantallaComprobante
             panelNuevo.add(new JLabel(cadena));
             frameConfirmacion.setContentPane(panelNuevo);*/
 
-            JFrame frameConfirmacion = crearVentana();
+            JFrame frameConfirmacion = new FramePantallaComprobante();
             //JPanel panelNuevo = new JPanel();
 
 
@@ -96,6 +97,8 @@ public class Control_PantallaComprobante
      * Crea una ventana de confirmacion
      * @return Una ventana
      */
+
+    /*
     public static JFrame crearVentana()
     {
         JFrame frameConfirmacion = new JFrame("Confirmacion de operacion");
@@ -106,5 +109,5 @@ public class Control_PantallaComprobante
 
         return frameConfirmacion;
     }
-
+    */
 }
