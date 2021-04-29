@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="311.25" y="190.0">servidor.persistencia.reguladores.DataSource</node>
+    <node x="12.0" y="270.0">cliente.socketCliente.TCPEchoClient</node>
+    <node x="12.0" y="590.0">cliente.GUI.MenuPrincipal</node>
+    <node x="529.7931034482758" y="80.0">Almacenadora.Lista</node>
+    <node x="27.25" y="190.0">cliente.controlador.Control_PantallaComprobante</node>
+    <node x="871.8793103448276" y="190.0">servidor.persistencia.dao.Dao</node>
+    <node x="252.2528735632184" y="430.0">servidor.socketServer.MultiTCPEchoServer</node>
+    <node x="41.25" y="510.0">cliente.GUI.AccionAgregarUsuario</node>
+    <node x="16.0" y="430.0">cliente.controlador.Control_paso</node>
+    <node x="828.3793103448276" y="80.0">servidor.persistencia.dto.Dto</node>
+    <node x="0.0" y="350.0">cliente.controlador.Control_conexion</node>
+    <node x="376.5057471264368" y="350.0">servidor.socketServer.SingleTCPEchoServer</node>
+    <node x="392.2931034482758" y="270.0">servidor.persistencia.reguladores.Controladorordenesejecucion</node>
+    <node x="754.8793103448276" y="190.0">servidor.persistencia.reguladores.Entity</node>
+    <node x="676.2931034482758" y="270.0">servidor.persistencia.reguladores.Controladorordenes</node>
+    <node x="533.7931034482758" y="0.0">Almacenadora.Nodo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="servidor.persistencia.reguladores.Controladorordenesejecucion" target="Almacenadora.Lista">
+      <point x="88.0" y="-15.0" />
+      <point x="612.2931034482758" y="250.0" />
+      <point x="594.1666666666667" y="250.0" />
+      <point x="594.1666666666667" y="170.0" />
+      <point x="573.7931034482758" y="170.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.reguladores.Controladorordenesejecucion" target="servidor.persistencia.reguladores.DataSource">
+      <point x="-88.0" y="-15.0" />
+      <point x="436.2931034482758" y="250.0" />
+      <point x="407.25" y="250.0" />
+      <point x="32.0" y="15.0" />
+    </edge>
+    <edge source="cliente.GUI.MenuPrincipal" target="cliente.controlador.Control_paso">
+      <point x="-38.0" y="-15.0" />
+      <point x="50.0" y="565.0" />
+      <point x="30.75" y="565.0" />
+      <point x="30.75" y="485.0" />
+      <point x="52.0" y="485.0" />
+      <point x="-36.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.reguladores.Entity" target="Almacenadora.Lista">
+      <point x="-36.0" y="-15.0" />
+      <point x="766.8793103448276" y="140.0" />
+      <point x="603.1264367816092" y="140.0" />
+      <point x="29.33333333333337" y="15.0" />
+    </edge>
+    <edge source="servidor.socketServer.SingleTCPEchoServer" target="servidor.persistencia.reguladores.Controladorordenes">
+      <point x="75.0" y="-15.0" />
+      <point x="551.5057471264367" y="330.0" />
+      <point x="772.2931034482758" y="330.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="cliente.controlador.Control_conexion" target="cliente.socketCliente.TCPEchoClient">
+      <point x="-44.0" y="-15.0" />
+      <point x="44.0" y="330.0" />
+      <point x="50.0" y="330.0" />
+      <point x="-38.0" y="15.0" />
+    </edge>
+    <edge source="servidor.socketServer.MultiTCPEchoServer" target="servidor.persistencia.reguladores.DataSource">
+      <point x="0.0" y="-15.0" />
+      <point x="348.2528735632184" y="405.0" />
+      <point x="329.79022988505744" y="405.0" />
+      <point x="329.79022988505744" y="250.0" />
+      <point x="343.25" y="250.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="cliente.GUI.MenuPrincipal" target="cliente.GUI.AccionAgregarUsuario">
+      <point x="38.0" y="-15.0" />
+      <point x="126.0" y="565.0" />
+      <point x="145.25" y="565.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.reguladores.Controladorordenes" target="Almacenadora.Lista">
+      <point x="-48.0" y="-15.0" />
+      <point x="724.2931034482758" y="250.0" />
+      <point x="703.5402298850574" y="250.0" />
+      <point x="703.5402298850574" y="160.0" />
+      <point x="583.5708812260536" y="160.0" />
+      <point x="9.777777777777828" y="15.0" />
+    </edge>
+    <edge source="cliente.controlador.Control_paso" target="cliente.controlador.Control_conexion">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="servidor.socketServer.MultiTCPEchoServer" target="servidor.socketServer.SingleTCPEchoServer">
+      <point x="64.0" y="-15.0" />
+      <point x="412.2528735632184" y="405.0" />
+      <point x="476.5057471264368" y="405.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="cliente.GUI.AccionAgregarUsuario" target="cliente.controlador.Control_paso">
+      <point x="0.0" y="-15.0" />
+      <point x="145.25" y="485.0" />
+      <point x="124.0" y="485.0" />
+      <point x="36.0" y="15.0" />
+    </edge>
+    <edge source="cliente.socketCliente.TCPEchoClient" target="cliente.controlador.Control_PantallaComprobante">
+      <point x="38.0" y="-15.0" />
+      <point x="126.0" y="250.0" />
+      <point x="159.25" y="250.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="servidor.socketServer.SingleTCPEchoServer" target="servidor.persistencia.reguladores.DataSource">
+      <point x="-75.0" y="-15.0" />
+      <point x="401.5057471264368" y="330.0" />
+      <point x="359.41666666666663" y="330.0" />
+      <point x="359.41666666666663" y="250.0" />
+      <point x="364.5833333333333" y="250.0" />
+      <point x="-10.666666666666686" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.dao.Dao" target="servidor.persistencia.dto.Dto">
+      <point x="0.0" y="-15.0" />
+      <point x="907.8793103448276" y="170.0" />
+      <point x="891.3793103448276" y="170.0" />
+      <point x="27.0" y="15.0" />
+    </edge>
+    <edge source="servidor.socketServer.SingleTCPEchoServer" target="servidor.persistencia.reguladores.Controladorordenesejecucion">
+      <point x="25.0" y="-15.0" />
+      <point x="501.5057471264368" y="330.0" />
+      <point x="524.2931034482758" y="330.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.reguladores.Controladorordenes" target="servidor.persistencia.dto.Dto">
+      <point x="80.0" y="-15.0" />
+      <point x="852.2931034482758" y="250.0" />
+      <point x="861.3793103448276" y="250.0" />
+      <point x="861.3793103448276" y="170.0" />
+      <point x="873.3793103448276" y="170.0" />
+      <point x="9.0" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.reguladores.Entity" target="servidor.persistencia.dto.Dto">
+      <point x="12.0" y="-15.0" />
+      <point x="814.8793103448276" y="160.0" />
+      <point x="837.3793103448276" y="160.0" />
+      <point x="-27.0" y="15.0" />
+    </edge>
+    <edge source="cliente.controlador.Control_PantallaComprobante" target="Almacenadora.Lista">
+      <point x="-66.0" y="-15.0" />
+      <point x="93.25" y="160.0" />
+      <point x="544.4597701149424" y="160.0" />
+      <point x="-29.33333333333337" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.reguladores.Controladorordenes" target="servidor.persistencia.reguladores.DataSource">
+      <point x="-80.0" y="-15.0" />
+      <point x="692.2931034482758" y="240.0" />
+      <point x="428.5833333333333" y="240.0" />
+      <point x="53.333333333333314" y="15.0" />
+    </edge>
+    <edge source="cliente.socketCliente.TCPEchoClient" target="Almacenadora.Lista">
+      <point x="-38.0" y="-15.0" />
+      <point x="50.0" y="250.0" />
+      <point x="16.75" y="250.0" />
+      <point x="16.75" y="150.0" />
+      <point x="534.6819923371647" y="150.0" />
+      <point x="-39.111111111111086" y="15.0" />
+    </edge>
+    <edge source="servidor.persistencia.reguladores.Controladorordenes" target="servidor.persistencia.reguladores.Entity">
+      <point x="16.0" y="-15.0" />
+      <point x="788.2931034482758" y="250.0" />
+      <point x="778.8793103448276" y="250.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="Almacenadora.Lista" target="Almacenadora.Nodo">
+      <point x="-29.33333333333337" y="-15.0" />
+      <point x="544.4597701149424" y="55.0" />
+      <point x="547.1264367816092" y="55.0" />
+      <point x="-26.66666666666663" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="469.0" y="279.375" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

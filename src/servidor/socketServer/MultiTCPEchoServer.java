@@ -46,7 +46,7 @@ public class MultiTCPEchoServer {
             {
                 sock = serverSocket.accept();
                 new SingleTCPEchoServer(sock,dataSource);
-                System.out.println("¡Se ha conectado un nuevo cliente!");
+
             }
             while (true) ;
         }
